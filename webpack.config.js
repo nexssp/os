@@ -4,7 +4,7 @@ const packageJson = require('./package.json');
 
 module.exports = {
   entry: {
-    ansi: './src/index.js',
+    os: './src/index.js',
   },
   target: 'node',
   mode: 'production',
