@@ -1,7 +1,14 @@
 {
   "name": "@nexssp/os",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Get linux distro name, distro version, check isRoot..",
+  "keywords": [
+    "os",
+    "distro",
+    "distribution",
+    "version",
+    "nexss"
+  ],
   "author": "mapoart@gmail.com",
   "homepage": "https://nexss.com",
   "repository": "https://github.com/nexssp/os.git",
