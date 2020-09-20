@@ -26,10 +26,17 @@ const pms = {
     install: 'zypper -n install',
     update: 'zypper -n update',
   },
+  SCOOP: {
+    install: 'scoop install',
+    update: 'scoop update',
+  },
 };
 
 const getPackageManager = (distro, operation = 'install', version) => {
   switch (distro) {
+    case 'Windows':
+      return pms.SCOOP[operation];
+      break;
     case distros.ORACLE:
       if (version >= 8 || !version) {
         // TODO: recognize the slim version

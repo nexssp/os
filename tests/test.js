@@ -1,6 +1,7 @@
 const os = require('../src/');
 
 // Distros
+console.log('distrosList', os.distros);
 console.log('isRoot: ', os.isRoot());
 console.log('name: ', os.name());
 console.log('get("name"): ', os.get('NAME'));

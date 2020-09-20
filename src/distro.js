@@ -21,23 +21,31 @@ const osReleaseSync = () => {
 };
 
 module.exports.get = (item) => {
-  const releaseData = osReleaseSync();
-  if (releaseData) {
-    const parsed = Array.from(
-      releaseData.matchAll(/^(?<key>[A-Z_)]+)="?(?<value>.*)".?$/gm)
-    ).reduce(
-      (acc, e) => ({
-        ...acc,
-        [e.groups.key]: e.groups.value,
-      }),
-      {}
-    );
+  if (process.platform === 'win32') {
+    const data = {
+      NAME: 'Windows',
+      VERSION_ID: require('os').release(),
+    };
+    return item ? data[item] : data;
+  } else {
+    const releaseData = osReleaseSync();
+    if (releaseData) {
+      const parsed = Array.from(
+        releaseData.matchAll(/^(?<key>[A-Z_)]+)="?(?<value>.*)".?$/gm)
+      ).reduce(
+        (acc, e) => ({
+          ...acc,
+          [e.groups.key]: e.groups.value,
+        }),
+        {}
+      );
 
-    if (item) {
-      return parsed[item];
+      if (item) {
+        return parsed[item];
+      }
+
+      return parsed;
     }
-
-    return parsed;
   }
 };
 
