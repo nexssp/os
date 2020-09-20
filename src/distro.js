@@ -56,10 +56,10 @@ module.exports.distros = {
   CENTOS: 'CentOS Linux',
   DEBIAN: 'Debian',
   FEDORA: 'Fedora',
-  MINT: 'Mint Linux',
+  MINT: 'Linux Mint',
   ORACLE: 'Oracle Linux Server',
   RHEL: 'RHEL Linux',
   SUSE_LEAP: 'openSUSE Leap',
   SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',
-  UBUNTU: 'UBUNTU',
+  UBUNTU: 'Ubuntu',
 };
