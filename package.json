@@ -1,0 +1,14 @@
+{
+  "name": "@nexssp/os",
+  "version": "1.0.1",
+  "description": "Get distro name, version..",
+  "author": "mapoart@gmail.com",
+  "homepage": "https://nexss.com",
+  "repository": "https://github.com/nexssp/os.git",
+  "scripts": {
+    "build": "webpack --progress",
+    "check:format": "prettier -l src/**/*.js --verbose"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}
