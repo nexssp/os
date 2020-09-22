@@ -14,7 +14,8 @@
   "repository": "https://github.com/nexssp/os.git",
   "scripts": {
     "build": "webpack --progress",
-    "check:format": "prettier -l src/**/*.js --verbose"
+    "check:format": "prettier -l src/**/*.js --verbose",
+    "prepublish": "npm run build"
   },
   "main": "src/index.js",
   "license": "MIT",
