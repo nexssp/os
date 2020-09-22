@@ -38,7 +38,7 @@ const getPackageManager = (distro, operation = 'install', version) => {
       return pms.SCOOP[operation];
       break;
     case distros.ORACLE:
-      if (version >= 8 || !version) {
+      if (version * 1 >= 8 || !version) {
         // TODO: recognize the slim version
         return pms.DNF[operation];
       } else {

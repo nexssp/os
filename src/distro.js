@@ -29,21 +29,35 @@ module.exports.get = (item) => {
     return item ? data[item] : data;
   } else {
     const releaseData = osReleaseSync();
-    if (releaseData) {
-      const parsed = Array.from(
-        releaseData.matchAll(/^(?<key>[A-Z_)]+)="?(?<value>.*)".?$/gm)
-      ).reduce(
-        (acc, e) => ({
-          ...acc,
-          [e.groups.key]: e.groups.value,
-        }),
-        {}
-      );
 
+    if (releaseData) {
+      const parsed = releaseData
+        .split(/\r?\n/)
+        .map((e) => {
+          var s = e.split('=');
+          return { key: [s[0]], value: s[1] };
+        })
+        .reduce(
+          (acc, e) => ({
+            ...acc,
+            [e.key]: e.value,
+          }),
+          {}
+        );
+      // Fedora didn't work below so did it much easier way by splits
+      // const parsed = Array.from(
+      //   releaseData.matchAll(/^.?(?<key>[A-Z_)]+)="?(?<value>.*)".?$/gm)
+      // ).reduce(
+      //   (acc, e) => ({
+      //     ...acc,
+      //     [e.groups.key]: e.groups.value,
+      //   }),
+      //   {}
+      // );
+      // console.log('PARSED!!!', parsed);
       if (item) {
         return parsed[item];
       }
-
       return parsed;
     }
   }

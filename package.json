@@ -1,6 +1,6 @@
 {
   "name": "@nexssp/os",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Get linux distro name, distro version, check isRoot..",
   "keywords": [
     "os",
@@ -20,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.6",
+    "core-js": "^2.6.8",
     "@babel/preset-env": "^7.11.5",
     "babel-loader": "^8.1.0",
     "webpack": "^4.44.2",

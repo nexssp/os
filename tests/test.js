@@ -13,3 +13,11 @@ console.log('get()', os.get()); // display all available data - different distro
 // Package managers
 console.log('getPM(install):', os.getPM()); // Displays install command
 console.log('getPM(update):', os.getPM('update')); // Displays update command
+
+// Sudo - shows when there is no admin, handy to write automations on eg. docker containers
+console.log(`${os.sudo()}apt-get install -y mypackage`);
+console.log(
+  `Replaces apt install/update to the right for distribution: ${os.replacePMByDistro(
+    'apt-get install -y mypackage'
+  )}`
+);
