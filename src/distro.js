@@ -40,7 +40,7 @@ module.exports.get = (item) => {
         .reduce(
           (acc, e) => ({
             ...acc,
-            [e.key]: e.value,
+            [e.key]: e.value.replace(/(^")|("$)/g, ''),
           }),
           {}
         );
