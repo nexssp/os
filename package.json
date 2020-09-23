@@ -1,6 +1,6 @@
 {
   "name": "@nexssp/os",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Get linux distro name, distro version, check isRoot..",
   "keywords": [
     "os",

@@ -68,7 +68,7 @@ module.exports.distros = {
   AMAZON: 'Amazon Linux',
   ARCH: 'Arch Linux',
   CENTOS: 'CentOS Linux',
-  DEBIAN: 'Debian',
+  DEBIAN: 'Debian GNU/Linux',
   FEDORA: 'Fedora',
   MINT: 'Linux Mint',
   ORACLE: 'Oracle Linux Server',
