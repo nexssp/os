@@ -76,4 +76,5 @@ module.exports.distros = {
   SUSE_LEAP: 'openSUSE Leap',
   SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',
   UBUNTU: 'Ubuntu',
+  WINDOWS: 'Windows',
 };

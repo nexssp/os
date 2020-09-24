@@ -23,6 +23,7 @@ module.exports.distros = {
   SUSE_LEAP: 'openSUSE Leap',
   SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',
   UBUNTU: 'Ubuntu',
+  WINDOWS: 'Windows',
 };
 ```
 
@@ -33,20 +34,23 @@ const os = require('@nexssp/os');
 
 // Distros
 console.log('distrosList', os.distros);
-console.log('isRoot: ', os.isRoot()); // true or false
-console.log('name: ', os.name()); // eg. Ubuntu
-console.log('get("name"): ', os.get('NAME')); // eg. Ubuntu
-console.log('v: ', os.v()); // eg. 18.04
-console.log('get("VERSION_ID"): ', os.get('VERSION_ID')); // eg. 18.04
-console.log('get("VERSION_IDxxx"): ', os.get('VERSION_IDxxx')); // undefined
-console.log('get()', os.get()); // display all available data - depends on Linux distro
+console.log('isRoot: ', os.isRoot());
+console.log('name: ', os.name());
+console.log('get("name"): ', os.get('NAME'));
+console.log('v: ', os.v());
+console.log('get("VERSION_ID"): ', os.get('VERSION_ID'));
+console.log('get("VERSION_IDxxx"): ', os.get('VERSION_IDxxx')); // does not exist so undefined is return
+console.log('get()', os.get()); // display all available data - different distros, different
 
 // Package managers
-console.log('getPM("install"):', os.getPM()); // Displays install command
-console.log('getPM("update"):', os.getPM('update')); // Displays update command
+console.log('getPM(install):', os.getPM()); // Displays install command
+console.log('getPM(update):', os.getPM('update')); // Displays update command
+console.log('getPM(uninstall):', os.getPM('uninstall')); // Displays uninstall command
+console.log('tags(prefix)', os.tags('prFX:')); //
+// Sudo - shows when there is no admin, handy to write automations on eg. docker containers
 console.log(`${os.sudo()}apt-get install -y mypackage`);
 console.log(
-  `Replaces apt install/update to the right for distribution: ${os.replacePMByDistro(
+  `Replaces apt install/update/uninstall to the right for distribution: ${os.replacePMByDistro(
     'apt-get install -y mypackage'
   )}`
 );
