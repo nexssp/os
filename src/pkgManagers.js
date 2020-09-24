@@ -5,30 +5,37 @@ const pms = {
   APT: {
     install: 'apt install -y',
     update: 'apt update -y',
+    uninstall: 'apt remove -y',
   },
   YUM: {
     install: 'yum install -y',
     update: 'yum update -y',
+    uninstall: 'yum uninstall -y',
   },
   DNF: {
-    install: 'dnf install',
-    update: 'dnf update',
+    install: 'dnf install -y',
+    update: 'dnf update -y',
+    uninstall: 'dnf uninstall -y',
   },
   APK: {
     install: 'apk add',
     update: 'apk update',
+    uninstall: 'apk del',
   },
   PACMAN: {
     install: 'pacman -S --noconfirm',
     update: 'pacman -Syu --noconfirm',
+    uninstall: 'pacman -R --noconfirm',
   },
   ZYPPER: {
     install: 'zypper -n install',
     update: 'zypper -n update',
+    uninstall: 'zypper -n remove',
   },
   SCOOP: {
     install: 'scoop install',
     update: 'scoop update',
+    uninstall: 'scoop uninstall',
   },
 };
 

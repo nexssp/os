@@ -1,7 +1,7 @@
 {
   "name": "@nexssp/os",
   "version": "1.0.16",
-  "description": "Get linux distro name, distro version, check isRoot..",
+  "description": "Get linux distro name, distro version, package managers, check isRoot..",
   "keywords": [
     "os",
     "distro",
@@ -13,9 +13,10 @@
   "homepage": "https://nexss.com",
   "repository": "https://github.com/nexssp/os.git",
   "scripts": {
+    "test": "jest --env=node --verbose ./tests",
     "build": "webpack --progress",
-    "check:format": "prettier -l src/**/*.js --verbose",
-    "prepublish": "npm run build"
+    "check:format": "prettier -l src/**/*.test.js --verbose",
+    "prepublish": "npm run test build"
   },
   "main": "src/index.js",
   "license": "MIT",
@@ -26,5 +27,8 @@
     "babel-loader": "^8.1.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "jest": "^26.4.2"
   }
 }

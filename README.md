@@ -10,21 +10,20 @@ Detect `Linux` _distro name_ and version, check if user is root, and some other 
 ## Distros list
 
 ```js
-distrosList {
-    ALPINE: 'Alpine Linux',
-    AMAZON: 'Amazon Linux',
-    ARCH: 'Arch Linux',
-    CENTOS: 'CentOS Linux',
-    DEBIAN: 'Debian',
-    FEDORA: 'Fedora',
-    MINT: 'Mint Linux',
-    ORACLE: 'Oracle Linux Server',
-    RHEL: 'RHEL Linux',
-    SUSE_LEAP: 'openSUSE Leap',
-    SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',
-    UBUNTU: 'UBUNTU'
-}
-
+module.exports.distros = {
+  ALPINE: 'Alpine Linux',
+  AMAZON: 'Amazon Linux',
+  ARCH: 'Arch Linux',
+  CENTOS: 'CentOS Linux',
+  DEBIAN: 'Debian GNU/Linux',
+  FEDORA: 'Fedora',
+  MINT: 'Linux Mint',
+  ORACLE: 'Oracle Linux Server',
+  RHEL: 'RHEL Linux',
+  SUSE_LEAP: 'openSUSE Leap',
+  SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',
+  UBUNTU: 'Ubuntu',
+};
 ```
 
 ## Examples
