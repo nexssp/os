@@ -21,7 +21,7 @@ describe('Replacements', () => {
               // TODO: recognize the slim version
               exp.toEqual('dnf install -y abc');
             } else {
-              exp.toEqual('yum install -y abc');
+              exp.toEqual('yum remove -y abc');
             }
             break;
           case distros.ALPINE:
@@ -36,7 +36,7 @@ describe('Replacements', () => {
           case distros.AMAZON:
           case distros.CENTOS:
           case distros.RHEL:
-            exp.toEqual('yum install -y abc');
+            exp.toEqual('yum remove -y abc');
             break;
           case distros.SUSE_LEAP:
           case distros.SUSE_TUMBLEWEED:
