@@ -10,7 +10,7 @@ const pms = {
   YUM: {
     install: 'yum install -y',
     update: 'yum update -y',
-    uninstall: 'yum uninstall -y',
+    uninstall: 'yum remove -y',
   },
   DNF: {
     install: 'dnf install -y',
