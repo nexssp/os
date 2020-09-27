@@ -21,7 +21,7 @@ describe('Replacements', () => {
               // TODO: recognize the slim version
               exp.toEqual('dnf install -y abc');
             } else {
-              exp.toEqual('yum remove -y abc');
+              exp.toEqual('yum install -y abc');
             }
             break;
           case distros.ALPINE:
@@ -36,7 +36,7 @@ describe('Replacements', () => {
           case distros.AMAZON:
           case distros.CENTOS:
           case distros.RHEL:
-            exp.toEqual('yum remove -y abc');
+            exp.toEqual('yum install -y abc');
             break;
           case distros.SUSE_LEAP:
           case distros.SUSE_TUMBLEWEED:
@@ -68,7 +68,7 @@ describe('Replacements', () => {
               // TODO: recognize the slim version
               exp.toEqual('dnf uninstall -y abc');
             } else {
-              exp.toEqual('yum uninstall -y abc');
+              exp.toEqual('yum remove -y abc');
             }
             break;
           case distros.ALPINE:
@@ -83,7 +83,7 @@ describe('Replacements', () => {
           case distros.AMAZON:
           case distros.CENTOS:
           case distros.RHEL:
-            exp.toEqual('yum uninstall -y abc');
+            exp.toEqual('yum remove -y abc');
             break;
           case distros.SUSE_LEAP:
           case distros.SUSE_TUMBLEWEED:
@@ -115,7 +115,7 @@ describe('Replacements', () => {
               // TODO: recognize the slim version
               exp.toEqual('dnf uninstall -y abc');
             } else {
-              exp.toEqual('yum uninstall -y abc');
+              exp.toEqual('yum remove -y abc');
             }
             break;
           case distros.ALPINE:
@@ -130,7 +130,7 @@ describe('Replacements', () => {
           case distros.AMAZON:
           case distros.CENTOS:
           case distros.RHEL:
-            exp.toEqual('yum uninstall -y abc');
+            exp.toEqual('yum remove -y abc');
             break;
           case distros.SUSE_LEAP:
           case distros.SUSE_TUMBLEWEED:
