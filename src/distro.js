@@ -1,5 +1,3 @@
-const { parse } = require('path');
-
 const cache = {};
 
 // Later implement async function

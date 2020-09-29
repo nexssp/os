@@ -66,7 +66,7 @@ describe('Replacements', () => {
           case distros.ORACLE:
             if (version * 1 >= 8 || !version) {
               // TODO: recognize the slim version
-              exp.toEqual('dnf uninstall -y abc');
+              exp.toEqual('dnf remove -y abc');
             } else {
               exp.toEqual('yum remove -y abc');
             }
@@ -78,7 +78,7 @@ describe('Replacements', () => {
             exp.toEqual('pacman -R --noconfirm abc');
             break;
           case distros.FEDORA:
-            exp.toEqual('dnf uninstall -y abc');
+            exp.toEqual('dnf remove -y abc');
             break;
           case distros.AMAZON:
           case distros.CENTOS:
@@ -104,41 +104,41 @@ describe('Replacements', () => {
     Object.values(distros).forEach((el) => {
       const distName = el;
       const version = 7;
-      const val = os.replacePMByDistro('apt-get remove -y abc', distName, version);
+      const val = os.replacePMByDistro('apt-get update -y abc', distName, version);
       const exp = expect(val);
       if (distName === 'Windows') {
-        exp.toEqual('scoop uninstall abc');
+        exp.toEqual('scoop update abc');
       } else {
         switch (distName) {
           case distros.ORACLE:
             if (version * 1 >= 8 || !version) {
               // TODO: recognize the slim version
-              exp.toEqual('dnf uninstall -y abc');
+              exp.toEqual('dnf update -y abc');
             } else {
-              exp.toEqual('yum remove -y abc');
+              exp.toEqual('yum update -y abc');
             }
             break;
           case distros.ALPINE:
-            exp.toEqual('apk del abc');
+            exp.toEqual('apk update abc');
             break;
           case distros.ARCH:
-            exp.toEqual('pacman -R --noconfirm abc');
+            exp.toEqual('pacman -Syu --noconfirm abc');
             break;
           case distros.FEDORA:
-            exp.toEqual('dnf uninstall -y abc');
+            exp.toEqual('dnf update -y abc');
             break;
           case distros.AMAZON:
           case distros.CENTOS:
           case distros.RHEL:
-            exp.toEqual('yum remove -y abc');
+            exp.toEqual('yum update -y abc');
             break;
           case distros.SUSE_LEAP:
           case distros.SUSE_TUMBLEWEED:
-            exp.toEqual('zypper -n remove abc');
+            exp.toEqual('zypper -n update abc');
             break;
           case distros.UBUNTU:
           default:
-            exp.toEqual('apt remove -y abc');
+            exp.toEqual('apt update -y abc');
             break;
         }
       }

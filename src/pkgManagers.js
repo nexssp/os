@@ -15,7 +15,7 @@ const pms = {
   DNF: {
     install: 'dnf install -y',
     update: 'dnf update -y',
-    uninstall: 'dnf uninstall -y',
+    uninstall: 'dnf remove -y',
   },
   APK: {
     install: 'apk add',
