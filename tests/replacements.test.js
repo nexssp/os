@@ -42,6 +42,9 @@ describe('Replacements', () => {
           case distros.SUSE_TUMBLEWEED:
             exp.toEqual('zypper -n install abc');
             break;
+          case distros.NIXOS:
+            exp.toEqual('nix-shell -p abc');
+            break;
           case distros.UBUNTU:
           default:
             exp.toEqual('apt install -y abc');
@@ -89,6 +92,9 @@ describe('Replacements', () => {
           case distros.SUSE_TUMBLEWEED:
             exp.toEqual('zypper -n remove abc');
             break;
+          case distros.NIXOS:
+            exp.toEqual('nix-store --delete abc');
+            break;
           case distros.UBUNTU:
           default:
             exp.toEqual('apt remove -y abc');
@@ -135,6 +141,9 @@ describe('Replacements', () => {
           case distros.SUSE_LEAP:
           case distros.SUSE_TUMBLEWEED:
             exp.toEqual('zypper -n update abc');
+            break;
+          case distros.NIXOS:
+            exp.toEqual('nix-channel --update abc');
             break;
           case distros.UBUNTU:
           default:

@@ -69,6 +69,7 @@ module.exports.distros = {
   DEBIAN: 'Debian GNU/Linux',
   FEDORA: 'Fedora',
   MINT: 'Linux Mint',
+  NIXOS: 'NixOS',
   ORACLE: 'Oracle Linux Server',
   RHEL: 'RHEL Linux',
   SUSE_LEAP: 'openSUSE Leap',

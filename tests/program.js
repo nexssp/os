@@ -14,6 +14,7 @@ console.log('get()', os.get()); // display all available data - different distro
 console.log('getPM(install):', os.getPM()); // Displays install command
 console.log('getPM(update):', os.getPM('update')); // Displays update command
 console.log('getPM(uninstall):', os.getPM('uninstall')); // Displays update command
+console.log('getPM(search):', os.getPM('search')); // Displays update command
 console.log('tags(prefix)', os.tags('prFX:'));
 // Sudo - shows when there is no admin, handy to write automations on eg. docker containers
 console.log(`${os.sudo()}apt-get install -y mypackage`);
