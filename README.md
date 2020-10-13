@@ -18,6 +18,7 @@ module.exports.distros = {
   DEBIAN: 'Debian GNU/Linux',
   FEDORA: 'Fedora',
   MINT: 'Linux Mint',
+  NIXOS: 'NixOS',
   ORACLE: 'Oracle Linux Server',
   RHEL: 'RHEL Linux',
   SUSE_LEAP: 'openSUSE Leap',
@@ -39,14 +40,16 @@ console.log('name: ', os.name());
 console.log('get("name"): ', os.get('NAME'));
 console.log('v: ', os.v());
 console.log('get("VERSION_ID"): ', os.get('VERSION_ID'));
-console.log('get("VERSION_IDxxx"): ', os.get('VERSION_IDxxx')); // does not exist so undefined is return
+console.log('get("VERSION_IDxxx"): ', os.get('VERSION_IDxxx')); // does not exist so nothinis return
 console.log('get()', os.get()); // display all available data - different distros, different
-
+console.log('getShell()', os.getShell()); // display
+console.log('getShell(ALPINE)', os.getShell(os.distros.ALPINE));
 // Package managers
 console.log('getPM(install):', os.getPM()); // Displays install command
 console.log('getPM(update):', os.getPM('update')); // Displays update command
-console.log('getPM(uninstall):', os.getPM('uninstall')); // Displays uninstall command
-console.log('tags(prefix)', os.tags('prFX:')); //
+console.log('getPM(uninstall):', os.getPM('uninstall')); // Displays update command
+console.log('getPM(search):', os.getPM('search')); // Displays update command
+console.log('tags(prefix)', os.tags('prFX:'));
 // Sudo - shows when there is no admin, handy to write automations on eg. docker containers
 console.log(`${os.sudo()}apt-get install -y mypackage`);
 console.log(
@@ -54,4 +57,5 @@ console.log(
     'apt-get install -y mypackage'
   )}`
 );
+
 ```
