@@ -52,18 +52,21 @@ const replacePMByDistro = (cmd, distro, version) => {
 };
 
 const getShell = (distro) => {
-  // if no distro specified use
-  if (process.platform === 'darwin') return 'zsh';
-  if (!distro) distro = name();
-  if (!distro && process.platform === 'win32') {
-    return true;
-  } else {
-    switch (distro) {
-      case distros.ALPINE:
-        return '/bin/sh';
-      default:
-        return '/bin/bash';
-    }
+  if (!distro) {
+    if (process.platform === 'darwin') return 'zsh';
+    if (process.platform === 'win32') return true;
+    distro = name();
+  }
+
+  switch (distro) {
+    case distros.ALPINE:
+      return '/bin/sh';
+    case distros.WINDOWS:
+      return true;
+    case distros.MACOS:
+      return '/bin/zsh';
+    default:
+      return '/bin/bash';
   }
 };
 

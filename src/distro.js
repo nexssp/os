@@ -76,4 +76,5 @@ module.exports.distros = {
   SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',
   UBUNTU: 'Ubuntu',
   WINDOWS: 'Windows',
+  MACOS: 'MacOS',
 };
