@@ -1,6 +1,5 @@
 const { distros, get } = require('./distro');
 const { getPackageManager } = require('./pkgManagers.js');
-
 const name = () => get('NAME');
 const v = () => get('VERSION_ID');
 const isRoot = () => (process.getuid && process.getuid() === 0) || false;
@@ -52,4 +51,20 @@ const replacePMByDistro = (cmd, distro, version) => {
   }
 };
 
-module.exports = { isRoot, sudo, name, v, distros, get, getPM, tags, replacePMByDistro };
+const getShell = (distro) => {
+  // if no distro specified use
+  if (process.platform === 'darwin') return 'zsh';
+  if (!distro) distro = name();
+  if (!distro && process.platform === 'win32') {
+    return true;
+  } else {
+    switch (distro) {
+      case distros.ALPINE:
+        return '/bin/sh';
+      default:
+        return '/bin/bash';
+    }
+  }
+};
+
+module.exports = { isRoot, sudo, name, v, distros, get, getPM, tags, replacePMByDistro, getShell };
