@@ -1,5 +1,18 @@
 # @nexssp/os
 
+## Installation
+
+```sh
+npm i @nexssp/os
+```
+
+## Usage
+
+```js
+const os = require('@nexssp/os');
+console.log(os.name()); // shows distro name
+```
+
 Detect `Linux` _distro name_ and version, check if user is root, and some other info. Also works for Windows showing name as `Windows` and version like `10.0.19041`
 
 Recognize different distros and Windows versions by tags.
@@ -39,11 +52,10 @@ module.exports.distros = {
 };
 ```
 
-## Examples
+## More Examples
 
 ```js
-const os = require('../');
-console.log(os);
+const os = require('@nexssp/os');
 
 // Distros
 console.log('distrosList', os.distros);
