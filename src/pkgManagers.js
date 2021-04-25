@@ -1,6 +1,6 @@
 const { distros } = require('./distro');
 
-// Linux package managers
+// Package managers for each OS
 const pms = {
   APK: {
     install: 'apk add',
