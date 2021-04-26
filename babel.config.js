@@ -1,15 +1,16 @@
-"use strict";
+'use strict';
 
 module.exports = {
   presets: [
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
-        modules: "commonjs",
+        modules: 'commonjs',
         targets: {
-          node: "4.9.1",
+          node: '4.9.1',
         },
-        useBuiltIns: "usage",
+        useBuiltIns: 'usage',
+        corejs: 3,
       },
     ],
   ],
