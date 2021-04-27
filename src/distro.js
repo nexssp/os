@@ -64,6 +64,7 @@ module.exports.get = (item) => {
 module.exports.distros = {
   ALPINE: 'Alpine Linux',
   AMAZON: 'Amazon Linux',
+  AMAZON_AMI: 'Amazon Linux AMI',
   ARCH: 'Arch Linux',
   CENTOS: 'CentOS Linux',
   DEBIAN: 'Debian GNU/Linux',

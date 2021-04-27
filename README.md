@@ -28,6 +28,7 @@ console.log('tags(prefix)', os.tags('prFX:')); // [ 'prFX:WINDOWS10', 'prFX:WIND
 
 ## New
 
+- Added Amazon Linux AMI distro and package manager setup.
 - function `sudo()` which contain sudo where user is not admin and nothing if it is. It helps writing installers so automatically will add sudo if needed and for example docker containers will leave it blank. eg `${sudo()}apt install -y somepackage`
 - function `replacePMByDistro()` which replaces default (apt-get install -y) to the host distribution. For example `${os.replacePMByDistro('apt-get install -y nexss')}`, will on Fedora replace with dnf install, on Ubuntu will not replace it as it is default, on Alpine it will be apk, on Oracle Linux yum install or dns install depends on your linux distribution...
 
@@ -37,6 +38,7 @@ console.log('tags(prefix)', os.tags('prFX:')); // [ 'prFX:WINDOWS10', 'prFX:WIND
 module.exports.distros = {
   ALPINE: 'Alpine Linux',
   AMAZON: 'Amazon Linux',
+  AMAZON_AMI: 'Amazon Linux AMI',
   ARCH: 'Arch Linux',
   CENTOS: 'CentOS Linux',
   DEBIAN: 'Debian GNU/Linux',
@@ -49,6 +51,7 @@ module.exports.distros = {
   SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',
   UBUNTU: 'Ubuntu',
   WINDOWS: 'Windows',
+  MACOS: 'MacOS',
 };
 ```
 

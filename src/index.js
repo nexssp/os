@@ -60,6 +60,7 @@ const getShell = (distro) => {
 
   switch (distro) {
     case distros.ALPINE:
+    case distros.AMAZON_AMI:
       return '/bin/sh';
     case distros.WINDOWS:
       return true;

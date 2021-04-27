@@ -69,6 +69,7 @@ const getPackageManager = (distro, operation = 'install', version) => {
       return pms.PACMAN[operation];
     case distros.FEDORA:
       return pms.DNF[operation];
+    case distros.AMAZON_AMI:
     case distros.AMAZON:
     case distros.CENTOS:
     case distros.RHEL:
