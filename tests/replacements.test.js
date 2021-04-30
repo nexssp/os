@@ -31,9 +31,14 @@ describe('Replacements', () => {
             exp.toEqual('pacman -S --noconfirm abc');
             break;
           case distros.FEDORA:
-            exp.toEqual('dnf install -y abc');
+            if (version * 1 >= 22 || !version) {
+              exp.toEqual('dnf install -y abc');
+            } else {
+              exp.toEqual('yum install -y abc');
+            }
             break;
           case distros.AMAZON:
+          case distros.AMAZON_AMI:
           case distros.CENTOS:
           case distros.RHEL:
             exp.toEqual('yum install -y abc');
@@ -81,9 +86,14 @@ describe('Replacements', () => {
             exp.toEqual('pacman -R --noconfirm abc');
             break;
           case distros.FEDORA:
-            exp.toEqual('dnf remove -y abc');
+            if (version * 1 >= 22 || !version) {
+              exp.toEqual('dnf remove -y abc');
+            } else {
+              exp.toEqual('yum remove -y abc');
+            }
             break;
           case distros.AMAZON:
+          case distros.AMAZON_AMI:
           case distros.CENTOS:
           case distros.RHEL:
             exp.toEqual('yum remove -y abc');
@@ -131,9 +141,14 @@ describe('Replacements', () => {
             exp.toEqual('pacman -Syu --noconfirm abc');
             break;
           case distros.FEDORA:
-            exp.toEqual('dnf update -y abc');
+            if (version * 1 >= 22 || !version) {
+              exp.toEqual('dnf update -y abc');
+            } else {
+              exp.toEqual('yum update -y abc');
+            }
             break;
           case distros.AMAZON:
+          case distros.AMAZON_AMI:
           case distros.CENTOS:
           case distros.RHEL:
             exp.toEqual('yum update -y abc');

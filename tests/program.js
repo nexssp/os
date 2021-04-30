@@ -1,5 +1,4 @@
 const os = require('../');
-console.log(os);
 
 // Distros
 console.log('distrosList', os.distros);
