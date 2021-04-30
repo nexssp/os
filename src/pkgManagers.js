@@ -54,7 +54,7 @@ const pms = {
 
 const getPackageManager = (distro, operation = 'install', version) => {
   switch (distro) {
-    case 'Windows':
+    case distros.WINDOWS:
       return pms.SCOOP[operation];
     case distros.ORACLE:
       if (version * 1 >= 8 || !version) {
@@ -68,7 +68,7 @@ const getPackageManager = (distro, operation = 'install', version) => {
     case distros.ARCH:
       return pms.PACMAN[operation];
     case distros.FEDORA:
-    if (version * 1 >= 22 || !version) {
+      if (version * 1 >= 22 || !version) {
         return pms.DNF[operation];
       } else {
         return pms.YUM[operation];
@@ -84,6 +84,7 @@ const getPackageManager = (distro, operation = 'install', version) => {
     case distros.NIXOS:
       return pms.NIX[operation];
     case distros.UBUNTU:
+      return pms.APT[operation];
     default:
       return pms.APT[operation];
   }
