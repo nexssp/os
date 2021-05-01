@@ -1,5 +1,6 @@
 const { distros, get } = require('./distro');
 const { getPackageManager } = require('./pkgManagers.js');
+const { pathWinToLinux } = require('./winVsLinux');
 const name = () => get('NAME');
 const v = () => get('VERSION_ID');
 const isRoot = () => (process.getuid && process.getuid() === 0) || false;
@@ -71,4 +72,16 @@ const getShell = (distro) => {
   }
 };
 
-module.exports = { isRoot, sudo, name, v, distros, get, getPM, tags, replacePMByDistro, getShell };
+module.exports = {
+  isRoot,
+  sudo,
+  name,
+  v,
+  distros,
+  get,
+  getPM,
+  tags,
+  replacePMByDistro,
+  getShell,
+  pathWinToLinux,
+};

@@ -44,3 +44,9 @@ console.log(
     'apt-get install -y mypackage'
   )}`
 );
+
+console.log('getShell() - your OS Shell', os.getShell()); // display current OS eg /bin/bash
+console.log(
+  `pathWinToLinux("C:\\Users\\mapoart\\testok"):`,
+  os.pathWinToLinux('C:\\Users\\mapoart\\testok')
+); // /mnt/c/Users/mapoart/xxxxxxx

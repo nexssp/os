@@ -1,5 +1,9 @@
 # @nexssp/os
 
+- **NEW 1.0.30+** - `os.pathWinToLinux(path)` - converts windows path to linux -> handy with WSL automations (**W**indows **S**ubsystem for **L**inux).
+
+_Note: This function is used in the [Nexss Programmer](https://github.com/nexssp/cli) to implement Crystal Language for Windows through WSL._
+
 ## Installation
 
 ```sh
@@ -104,4 +108,10 @@ console.log(
     'apt-get install -y mypackage'
   )}`
 );
+
+console.log('getShell() - your OS Shell', os.getShell()); // display current OS eg /bin/bash
+console.log(
+  `pathWinToLinux("C:\\Users\\mapoart\\testok"):`,
+  os.pathWinToLinux('C:\\Users\\mapoart\\testok')
+); // /mnt/c/Users/mapoart/xxxxxxx
 ```

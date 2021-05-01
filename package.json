@@ -1,12 +1,14 @@
 {
   "name": "@nexssp/os",
-  "version": "1.0.29",
-  "description": "Get linux distro name, distro version, package managers, check isRoot..",
+  "version": "1.0.30",
+  "description": "Get linux distro name, distro version, package managers, check isRoot, convert paths..",
   "keywords": [
     "os",
     "distro",
     "distribution",
     "version",
+    "linux",
+    "windows",
     "nexss"
   ],
   "author": "mapoart@gmail.com",
