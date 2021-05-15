@@ -33,7 +33,7 @@ console.log('tags(prefix)', os.tags('prFX:')); // [ 'prFX:WINDOWS10', 'prFX:WIND
 ## New
 
 - Added Amazon Linux AMI distro and package manager setup.
-- function `sudo()` which contain sudo where user is not admin and nothing if it is. It helps writing installers so automatically will add sudo if needed and for example docker containers will leave it blank. eg `${sudo()}apt install -y somepackage`
+- function `sudo()` which contain sudo where user is not admin and nothing if it is. It helps writing installers so automatically will add sudo if needed and for example docker containers will leave it blank. eg `${sudo()}apt-get install -y somepackage`
 - function `replacePMByDistro()` which replaces default (apt-get install -y) to the host distribution. For example `${os.replacePMByDistro('apt-get install -y nexss')}`, will on Fedora replace with dnf install, on Ubuntu will not replace it as it is default, on Alpine it will be apk, on Oracle Linux yum install or dns install depends on your linux distribution...
 
 ## Distros list
@@ -99,7 +99,7 @@ console.log('getShell(MACOS)', os.getShell(os.distros.MACOS)); // defined OS She
 console.log('getPM(install):', os.getPM()); // Displays install command
 console.log('getPM(update):', os.getPM('update')); // Displays update command
 console.log('getPM(uninstall):', os.getPM('uninstall')); // Displays update command
-console.log('getPM(search):', os.getPM('search')); // Displays update command
+console.log('getPM(search):', os.getPM('search')); // Displays search command
 console.log('tags(prefix)', os.tags('prFX:')); // [ 'prFX:WINDOWS10', 'prFX:WINDOWS' ]
 // Sudo - shows when there is no admin, handy to write automations on eg. docker containers
 console.log(`${os.sudo()}apt-get install -y mypackage`);

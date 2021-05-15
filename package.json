@@ -1,6 +1,7 @@
 {
   "name": "@nexssp/os",
-  "version": "1.0.30",
+  "main": "src/index.js",
+  "version": "1.0.31",
   "description": "Get linux distro name, distro version, package managers, check isRoot, convert paths..",
   "keywords": [
     "os",
@@ -22,25 +23,11 @@
     "email": "mapoart@gmail.com"
   },
   "scripts": {
-    "test": "jest --env=node --verbose ./tests",
-    "build": "webpack --progress",
-    "check:format": "prettier -l src/**/*.test.js --verbose",
-    "prepublish": "npm run test build"
+    "test": "nexssp-test --debug",
+    "prepare": "npm run build",
+    "build": "npx nexssp-min"
   },
-  "main": "dist/index.js",
-  "files": [
-    "dist/index.js"
-  ],
   "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.13.16",
-    "@babel/preset-env": "^7.13.15",
-    "babel-loader": "^8.2.2",
-    "core-js": "^3.11.0",
-    "jest": "^26.6.3",
-    "webpack": "^5.35.1",
-    "webpack-cli": "^4.6.0"
-  },
   "funding": [
     {
       "type": "paypal",
@@ -50,5 +37,9 @@
       "type": "github",
       "url": "https://github.com/nexssp/cli?sponsor=1"
     }
-  ]
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@nexssp/test": "^1.0.19"
+  }
 }

@@ -9,10 +9,10 @@ const pms = {
     search: 'apk search',
   },
   APT: {
-    install: 'apt install -y',
-    update: 'apt update -y',
-    uninstall: 'apt remove -y',
-    search: 'apt search',
+    install: 'apt-get install -y',
+    update: 'apt-get update -y',
+    uninstall: 'apt-get remove -y',
+    search: 'apt-cache search',
   },
   DNF: {
     install: 'dnf install -y',

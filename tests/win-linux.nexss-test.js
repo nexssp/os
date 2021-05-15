@@ -15,15 +15,22 @@ const testValuesToBe = {
   '\\Users\\mapoart': '/Users/mapoart',
 };
 
-describe('winVsLinux', () => {
-  test(`os.pathWinToLinux() => `, (done) => {
-    for (const [k, v] of Object.entries(testValuesNotToBe)) {
-      expect(pathWinToLinux(k)).not.toBe(v);
-    }
-
-    for (const [k, v] of Object.entries(testValuesToBe)) {
-      expect(pathWinToLinux(k)).toBe(v);
-    }
-    done();
+let generatedTests = [];
+for (const [k, v] of Object.entries(testValuesNotToBe)) {
+  generatedTests.push({
+    type: 'notEqual',
+    params: [pathWinToLinux(k), v],
   });
-});
+}
+
+for (const [k, v] of Object.entries(testValuesToBe)) {
+  generatedTests.push({
+    type: 'equal',
+    params: [pathWinToLinux(k), v],
+  });
+}
+
+module.exports = {
+  notEval: true, // params won't be evaluated before begin.
+  nexsstests: [...generatedTests],
+};

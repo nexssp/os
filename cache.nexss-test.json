@@ -1,0 +1,855 @@
+[
+  [
+    {
+      "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/core.nexss-test.js",
+      "results": [
+        {
+          "type": "equal",
+          "params": [
+            "Windows",
+            "Windows"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/core.nexss-test.js",
+          "title": "Windows",
+          "testType": "equal",
+          "result": true,
+          "testBody": "Windows equal -> Windows",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "scoop install",
+            "scoop install"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/core.nexss-test.js",
+          "title": "scoop install",
+          "testType": "equal",
+          "result": true,
+          "testBody": "scoop install equal -> scoop install",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "{\"NAME\":\"Windows\",\"VERSION_ID\":\"10.0.19042\"}",
+            {}
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/core.nexss-test.js",
+          "title": "{\"NAME\":\"Windows\",\"VERSION_ID\":\"10.0.19042\"}",
+          "testType": "equal",
+          "result": true,
+          "testBody": "{\"NAME\":\"Windows\",\"VERSION_ID\":\"10.0.19042\"} equal -> /{\"NAME\":\".*\"/",
+          "ok": true
+        },
+        {
+          "params": [
+            "node program.js",
+            {},
+            {
+              "chdir": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os\\tests"
+            }
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/core.nexss-test.js",
+          "title": "node program.js",
+          "testType": "shouldContain",
+          "result": "distrosList {\n  ALPINE: 'Alpine Linux',\n  AMAZON: 'Amazon Linux',\n  AMAZON_AMI: 'Amazon Linux AMI',\n  ARCH: 'Arch Linux',\n  CENTOS: 'CentOS Linux',\n  DEBIAN: 'Debian GNU/Linux',\n  FEDORA: 'Fedora',\n  MINT: 'Linux Mint',\n  NIXOS: 'NixOS',\n  ORACLE: 'Oracle Linux Server',\n  RHEL: 'RHEL Linux',\n  SUSE_LEAP: 'openSUSE Leap',\n  SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',\n  UBUNTU: 'Ubuntu',\n  WINDOWS: 'Windows',\n  MACOS: 'MacOS'\n}\nisRoot:  false\nname:  Windows\nget(\"name\"):  Windows\nv:  10.0.19042\nget(\"VERSION_ID\"):  10.0.19042\nget(\"VERSION_IDxxx\"):  undefined\nget() { NAME: 'Windows', VERSION_ID: '10.0.19042' }\ngetShell() - your OS Shell true\ngetShell(ALPINE) /bin/sh\ngetShell(MACOS) /bin/zsh\ngetPM(install): scoop install\ngetPM(update): scoop update\ngetPM(uninstall): scoop uninstall\ngetPM(search): scoop search\ntags(prefix) [ 'prFX:WINDOWS10', 'prFX:WINDOWS' ]\nsudo apt-get install -y mypackage\nReplaces apt install/update/uninstall to the right for distribution: scoop install mypackage\ngetShell() - your OS Shell true\npathWinToLinux(\"C:\\Users\\mapoart\\testok\"): /mnt/c/Users/mapoart/testok",
+          "testBody": "node program.js shouldContain -> /^distrosList/",
+          "ok": true
+        }
+      ],
+      "totalOk": 4,
+      "totalFailed": 0
+    }
+  ],
+  [
+    {
+      "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+      "results": [
+        {
+          "type": "equal",
+          "params": [
+            "apk add abc",
+            "apk add abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "apk add abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apk add abc equal -> apk add abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum install -y abc",
+            "yum install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "yum install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum install -y abc equal -> yum install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum install -y abc",
+            "yum install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "yum install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum install -y abc equal -> yum install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "pacman -S --noconfirm abc",
+            "pacman -S --noconfirm abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "pacman -S --noconfirm abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "pacman -S --noconfirm abc equal -> pacman -S --noconfirm abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum install -y abc",
+            "yum install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "yum install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum install -y abc equal -> yum install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get install -y abc",
+            "apt-get install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "apt-get install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get install -y abc equal -> apt-get install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum install -y abc",
+            "yum install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "yum install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum install -y abc equal -> yum install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get install -y abc",
+            "apt-get install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "apt-get install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get install -y abc equal -> apt-get install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "nix-shell -p abc",
+            "nix-shell -p abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "nix-shell -p abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "nix-shell -p abc equal -> nix-shell -p abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum install -y abc",
+            "yum install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "yum install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum install -y abc equal -> yum install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum install -y abc",
+            "yum install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "yum install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum install -y abc equal -> yum install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "zypper -n install abc",
+            "zypper -n install abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "zypper -n install abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "zypper -n install abc equal -> zypper -n install abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "zypper -n install abc",
+            "zypper -n install abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "zypper -n install abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "zypper -n install abc equal -> zypper -n install abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get install -y abc",
+            "apt-get install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "apt-get install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get install -y abc equal -> apt-get install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "scoop install abc",
+            "scoop install abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "scoop install abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "scoop install abc equal -> scoop install abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get install -y abc",
+            "apt-get install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "apt-get install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get install -y abc equal -> apt-get install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get install -y abc",
+            "apt-get install -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "apt-get install -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get install -y abc equal -> apt-get install -y abc",
+          "ok": true
+        }
+      ],
+      "totalOk": 17,
+      "totalFailed": 0
+    }
+  ],
+  [
+    {
+      "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+      "results": [
+        {
+          "type": "equal",
+          "params": [
+            "apk del abc",
+            "apk del abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "apk del abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apk del abc equal -> apk del abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum remove -y abc",
+            "yum remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "yum remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum remove -y abc equal -> yum remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum remove -y abc",
+            "yum remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "yum remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum remove -y abc equal -> yum remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "pacman -R --noconfirm abc",
+            "pacman -R --noconfirm abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "pacman -R --noconfirm abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "pacman -R --noconfirm abc equal -> pacman -R --noconfirm abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum remove -y abc",
+            "yum remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "yum remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum remove -y abc equal -> yum remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get remove -y abc",
+            "apt-get remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "apt-get remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get remove -y abc equal -> apt-get remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum remove -y abc",
+            "yum remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "yum remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum remove -y abc equal -> yum remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get remove -y abc",
+            "apt-get remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "apt-get remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get remove -y abc equal -> apt-get remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "nix-store --delete abc",
+            "nix-store --delete abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "nix-store --delete abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "nix-store --delete abc equal -> nix-store --delete abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum remove -y abc",
+            "yum remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "yum remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum remove -y abc equal -> yum remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum remove -y abc",
+            "yum remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "yum remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum remove -y abc equal -> yum remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "zypper -n remove abc",
+            "zypper -n remove abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "zypper -n remove abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "zypper -n remove abc equal -> zypper -n remove abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "zypper -n remove abc",
+            "zypper -n remove abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "zypper -n remove abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "zypper -n remove abc equal -> zypper -n remove abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get remove -y abc",
+            "apt-get remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "apt-get remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get remove -y abc equal -> apt-get remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "scoop uninstall abc",
+            "scoop uninstall abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "scoop uninstall abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "scoop uninstall abc equal -> scoop uninstall abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get remove -y abc",
+            "apt-get remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "apt-get remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get remove -y abc equal -> apt-get remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get remove -y abc",
+            "apt-get remove -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "apt-get remove -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get remove -y abc equal -> apt-get remove -y abc",
+          "ok": true
+        }
+      ],
+      "totalOk": 17,
+      "totalFailed": 0
+    }
+  ],
+  [
+    {
+      "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+      "results": [
+        {
+          "type": "equal",
+          "params": [
+            "apk update abc",
+            "apk update abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "apk update abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apk update abc equal -> apk update abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum update -y abc",
+            "yum update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "yum update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum update -y abc equal -> yum update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum update -y abc",
+            "yum update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "yum update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum update -y abc equal -> yum update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "pacman -Syu --noconfirm abc",
+            "pacman -Syu --noconfirm abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "pacman -Syu --noconfirm abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "pacman -Syu --noconfirm abc equal -> pacman -Syu --noconfirm abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum update -y abc",
+            "yum update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "yum update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum update -y abc equal -> yum update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get update -y abc",
+            "apt-get update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "apt-get update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get update -y abc equal -> apt-get update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum update -y abc",
+            "yum update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "yum update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum update -y abc equal -> yum update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get update -y abc",
+            "apt-get update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "apt-get update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get update -y abc equal -> apt-get update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "nix-channel --update abc",
+            "nix-channel --update abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "nix-channel --update abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "nix-channel --update abc equal -> nix-channel --update abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum update -y abc",
+            "yum update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "yum update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum update -y abc equal -> yum update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum update -y abc",
+            "yum update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "yum update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum update -y abc equal -> yum update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "zypper -n update abc",
+            "zypper -n update abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "zypper -n update abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "zypper -n update abc equal -> zypper -n update abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "zypper -n update abc",
+            "zypper -n update abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "zypper -n update abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "zypper -n update abc equal -> zypper -n update abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get update -y abc",
+            "apt-get update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "apt-get update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get update -y abc equal -> apt-get update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "scoop update abc",
+            "scoop update abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "scoop update abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "scoop update abc equal -> scoop update abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get update -y abc",
+            "apt-get update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "apt-get update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get update -y abc equal -> apt-get update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-get update -y abc",
+            "apt-get update -y abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "apt-get update -y abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-get update -y abc equal -> apt-get update -y abc",
+          "ok": true
+        }
+      ],
+      "totalOk": 17,
+      "totalFailed": 0
+    }
+  ],
+  [
+    {
+      "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/win-linux.nexss-test.js",
+      "results": [
+        {
+          "type": "notEqual",
+          "params": [
+            "/mnt/c/Users/mapoart",
+            null
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/win-linux.nexss-test.js",
+          "title": "/mnt/c/Users/mapoart",
+          "testType": "notEqual",
+          "result": true,
+          "testBody": "/mnt/c/Users/mapoart notEqual -> null",
+          "ok": true
+        },
+        {
+          "type": "notEqual",
+          "params": [
+            "./CC:/Users/mapoart",
+            "/mnt/cc/Users/mapoart"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/win-linux.nexss-test.js",
+          "title": "./CC:/Users/mapoart",
+          "testType": "notEqual",
+          "result": true,
+          "testBody": "./CC:/Users/mapoart notEqual -> /mnt/cc/Users/mapoart",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "/mnt/c/Users/mapoart",
+            "/mnt/c/Users/mapoart"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/win-linux.nexss-test.js",
+          "title": "/mnt/c/Users/mapoart",
+          "testType": "equal",
+          "result": true,
+          "testBody": "/mnt/c/Users/mapoart equal -> /mnt/c/Users/mapoart",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "/mnt/d/Users/mapoart",
+            "/mnt/d/Users/mapoart"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/win-linux.nexss-test.js",
+          "title": "/mnt/d/Users/mapoart",
+          "testType": "equal",
+          "result": true,
+          "testBody": "/mnt/d/Users/mapoart equal -> /mnt/d/Users/mapoart",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "/mnt/w/Users/mapoart",
+            "/mnt/w/Users/mapoart"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/win-linux.nexss-test.js",
+          "title": "/mnt/w/Users/mapoart",
+          "testType": "equal",
+          "result": true,
+          "testBody": "/mnt/w/Users/mapoart equal -> /mnt/w/Users/mapoart",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "./Users/mapoart",
+            "./Users/mapoart"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/win-linux.nexss-test.js",
+          "title": "./Users/mapoart",
+          "testType": "equal",
+          "result": true,
+          "testBody": "./Users/mapoart equal -> ./Users/mapoart",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "/Users/mapoart",
+            "/Users/mapoart"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/win-linux.nexss-test.js",
+          "title": "/Users/mapoart",
+          "testType": "equal",
+          "result": true,
+          "testBody": "/Users/mapoart equal -> /Users/mapoart",
+          "ok": true
+        }
+      ],
+      "totalOk": 7,
+      "totalFailed": 0
+    }
+  ]
+]
