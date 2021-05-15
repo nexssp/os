@@ -25,7 +25,7 @@
   "scripts": {
     "test": "nexssp-test --debug",
     "prepare": "npm run build",
-    "build": "npx nexssp-min"
+    "build": "npx nexssp/min"
   },
   "license": "MIT",
   "funding": [
