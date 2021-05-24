@@ -54,6 +54,7 @@ const replacePMByDistro = (cmd, distro, version) => {
 
 const getShell = (distro) => {
   if (!distro) {
+    if (process.platform === 'freebsd') return '/bin/csh'
     if (process.platform === 'darwin') return 'zsh'
     if (process.platform === 'win32') return true
     distro = name()
