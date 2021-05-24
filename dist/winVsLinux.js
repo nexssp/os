@@ -1,1 +1,0 @@
-module.exports.pathWinToLinux=e=>{var{isAbsolute:r}=require("path");if(r(e)){let r=e.replace(/([a-zA-Z])\:/,"/mnt/$1").replace(/\\/g,"/");return r=r.split(""),r[5]=r[5].toLowerCase(),r=r.join(""),r}return`./${e.replace(/\\/g,"/")}`};

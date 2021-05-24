@@ -1,5 +1,37 @@
 # @nexssp/os
 
+## New version 2.x
+
+**NOTE: 1.x USERS: Also 1.x Users can still move to this version but they will need to change the way to load @nexssp/os plugin from `require("@nexssp/os")` to `require("@nexssp/os/legacy")`**
+
+Now we are created new version with new oses.
+
+- **NEW:** **FreeBSD** and **Gentoo** supported.
+- **NEW:** terminal functions eg.
+
+```sh
+nexssp-os install nodejs --dry # displays install command for your os
+nexssp-os uninstall nodejs --json # uninstalls and shows result as json data
+nexssp-os search nodejs
+nexssp-os update nodejs
+```
+
+- **NEW:** Functions `.where()` - finds program and return path. Option to find multiple files at once with **--all** option
+- **NEW API:**
+  Example
+
+```js
+const nexssOS = require('@nexssp/os')
+const nexssOS1 = nexssOS()
+
+// in terminal nexssp-os install nodejs
+const result1 = nexssOS1.install(['nodejs'], { dry: true }) // dry will return  the install command for the OS the command is run
+//eg for Ubuntu it will be apt-get update, for gentoo emerge, ...etc. Without dry it will execute the command displayed with dry.
+const result2 = nexssOS1.uninstall(['nodejs'], { json: true }) // uninstall package - json will return json data
+nexssOS1.search(['nodejs']) // search for packages
+nexssOS1.update(['nodejs']) // update
+```
+
 - **NEW 1.0.30+** - `os.pathWinToLinux(path)` - converts windows path to linux -> handy with WSL automations (**W**indows **S**ubsystem for **L**inux).
 
 _Note: This function is used in the [Nexss Programmer](https://github.com/nexssp/cli) to implement Crystal Language for Windows through WSL._
@@ -13,8 +45,8 @@ npm i @nexssp/os
 ## Usage
 
 ```js
-const os = require('@nexssp/os');
-console.log(os.name()); // shows distro name
+const os = require('@nexssp/os')
+console.log(os.name()) // shows distro name
 ```
 
 Detect `Linux` _distro name_ and version, check if user is root, and some other info. Also works for Windows showing name as `Windows` and version like `10.0.19041`
@@ -24,10 +56,10 @@ Example:
 
 ```js
 // For Ubuntu 18
-console.log('tags(prefix)', os.tags('prFX:')); // [ 'prFX:UBUNTU18', 'prFX:UBUNTU' ]
+console.log('tags(prefix)', os.tags('prFX:')) // [ 'prFX:UBUNTU18', 'prFX:UBUNTU' ]
 
 // For Windows
-console.log('tags(prefix)', os.tags('prFX:')); // [ 'prFX:WINDOWS10', 'prFX:WINDOWS' ]
+console.log('tags(prefix)', os.tags('prFX:')) // [ 'prFX:WINDOWS10', 'prFX:WINDOWS' ]
 ```
 
 ## New
@@ -46,7 +78,9 @@ module.exports.distros = {
   ARCH: 'Arch Linux',
   CENTOS: 'CentOS Linux',
   DEBIAN: 'Debian GNU/Linux',
+  FREEBSD: 'FreeBSD',
   FEDORA: 'Fedora',
+  GENTOO: 'Gentoo',
   MINT: 'Linux Mint',
   NIXOS: 'NixOS',
   ORACLE: 'Oracle Linux Server',
@@ -56,23 +90,23 @@ module.exports.distros = {
   UBUNTU: 'Ubuntu',
   WINDOWS: 'Windows',
   MACOS: 'MacOS',
-};
+}
 ```
 
 ## More Examples
 
 ```js
-const os = require('@nexssp/os');
+const os = require('@nexssp/os')
 
 // Distros
-console.log('distrosList', os.distros);
-console.log('isRoot: ', os.isRoot());
-console.log('name: ', os.name());
-console.log('get("name"): ', os.get('NAME'));
-console.log('v: ', os.v());
-console.log('get("VERSION_ID"): ', os.get('VERSION_ID'));
-console.log('get("VERSION_IDxxx"): ', os.get('VERSION_IDxxx')); // does not exist so nothing is return
-console.log('get()', os.get()); // display all available data - different for each distros
+console.log('distrosList', os.distros)
+console.log('isRoot: ', os.isRoot())
+console.log('name: ', os.name())
+console.log('get("name"): ', os.get('NAME'))
+console.log('v: ', os.v())
+console.log('get("VERSION_ID"): ', os.get('VERSION_ID'))
+console.log('get("VERSION_IDxxx"): ', os.get('VERSION_IDxxx')) // does not exist so nothing is return
+console.log('get()', os.get()) // display all available data - different for each distros
 
 // Example
 // DISTRIB_ID: 'Ubuntu',
@@ -92,26 +126,26 @@ console.log('get()', os.get()); // display all available data - different for ea
 // VERSION_CODENAME: 'bionic',
 // UBUNTU_CODENAME: 'bionic'
 
-console.log('getShell() - your OS Shell', os.getShell()); // display current OS
-console.log('getShell(ALPINE)', os.getShell(os.distros.ALPINE)); // defined OS Shell
-console.log('getShell(MACOS)', os.getShell(os.distros.MACOS)); // defined OS Shell
+console.log('getShell() - your OS Shell', os.getShell()) // display current OS
+console.log('getShell(ALPINE)', os.getShell(os.distros.ALPINE)) // defined OS Shell
+console.log('getShell(MACOS)', os.getShell(os.distros.MACOS)) // defined OS Shell
 // Package managers
-console.log('getPM(install):', os.getPM()); // Displays install command
-console.log('getPM(update):', os.getPM('update')); // Displays update command
-console.log('getPM(uninstall):', os.getPM('uninstall')); // Displays update command
-console.log('getPM(search):', os.getPM('search')); // Displays search command
-console.log('tags(prefix)', os.tags('prFX:')); // [ 'prFX:WINDOWS10', 'prFX:WINDOWS' ]
+console.log('getPM(install):', os.getPM()) // Displays install command
+console.log('getPM(update):', os.getPM('update')) // Displays update command
+console.log('getPM(uninstall):', os.getPM('uninstall')) // Displays update command
+console.log('getPM(search):', os.getPM('search')) // Displays search command
+console.log('tags(prefix)', os.tags('prFX:')) // [ 'prFX:WINDOWS10', 'prFX:WINDOWS' ]
 // Sudo - shows when there is no admin, handy to write automations on eg. docker containers
-console.log(`${os.sudo()}apt-get install -y mypackage`);
+console.log(`${os.sudo()}apt-get install -y mypackage`)
 console.log(
   `Replaces apt install/update/uninstall to the right for distribution: ${os.replacePMByDistro(
     'apt-get install -y mypackage'
   )}`
-);
+)
 
-console.log('getShell() - your OS Shell', os.getShell()); // display current OS eg /bin/bash
+console.log('getShell() - your OS Shell', os.getShell()) // display current OS eg /bin/bash
 console.log(
   `pathWinToLinux("C:\\Users\\mapoart\\testok"):`,
   os.pathWinToLinux('C:\\Users\\mapoart\\testok')
-); // /mnt/c/Users/mapoart/xxxxxxx
+) // /mnt/c/Users/mapoart/testok
 ```

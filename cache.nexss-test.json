@@ -53,7 +53,7 @@
           "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/core.nexss-test.js",
           "title": "node program.js",
           "testType": "shouldContain",
-          "result": "distrosList {\n  ALPINE: 'Alpine Linux',\n  AMAZON: 'Amazon Linux',\n  AMAZON_AMI: 'Amazon Linux AMI',\n  ARCH: 'Arch Linux',\n  CENTOS: 'CentOS Linux',\n  DEBIAN: 'Debian GNU/Linux',\n  FEDORA: 'Fedora',\n  MINT: 'Linux Mint',\n  NIXOS: 'NixOS',\n  ORACLE: 'Oracle Linux Server',\n  RHEL: 'RHEL Linux',\n  SUSE_LEAP: 'openSUSE Leap',\n  SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',\n  UBUNTU: 'Ubuntu',\n  WINDOWS: 'Windows',\n  MACOS: 'MacOS'\n}\nisRoot:  false\nname:  Windows\nget(\"name\"):  Windows\nv:  10.0.19042\nget(\"VERSION_ID\"):  10.0.19042\nget(\"VERSION_IDxxx\"):  undefined\nget() { NAME: 'Windows', VERSION_ID: '10.0.19042' }\ngetShell() - your OS Shell true\ngetShell(ALPINE) /bin/sh\ngetShell(MACOS) /bin/zsh\ngetPM(install): scoop install\ngetPM(update): scoop update\ngetPM(uninstall): scoop uninstall\ngetPM(search): scoop search\ntags(prefix) [ 'prFX:WINDOWS10', 'prFX:WINDOWS' ]\nsudo apt-get install -y mypackage\nReplaces apt install/update/uninstall to the right for distribution: scoop install mypackage\ngetShell() - your OS Shell true\npathWinToLinux(\"C:\\Users\\mapoart\\testok\"): /mnt/c/Users/mapoart/testok",
+          "result": "distrosList {\n  ALPINE: 'Alpine Linux',\n  AMAZON: 'Amazon Linux',\n  AMAZON_AMI: 'Amazon Linux AMI',\n  ARCH: 'Arch Linux',\n  CENTOS: 'CentOS Linux',\n  DEBIAN: 'Debian GNU/Linux',\n  FREEBSD: 'FreeBSD',\n  FEDORA: 'Fedora',\n  GENTOO: 'Gentoo',\n  MINT: 'Linux Mint',\n  NIXOS: 'NixOS',\n  ORACLE: 'Oracle Linux Server',\n  RHEL: 'RHEL Linux',\n  SUSE_LEAP: 'openSUSE Leap',\n  SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',\n  UBUNTU: 'Ubuntu',\n  WINDOWS: 'Windows',\n  MACOS: 'MacOS'\n}\nisRoot:  false\nname:  Windows\nget(\"name\"):  Windows\nv:  10.0.19042\nget(\"VERSION_ID\"):  10.0.19042\nget(\"VERSION_IDxxx\"):  undefined\nget() { NAME: 'Windows', VERSION_ID: '10.0.19042' }\ngetShell() - your OS Shell true\ngetShell(ALPINE) /bin/sh\ngetShell(MACOS) /bin/zsh\ngetPM(install): scoop install\ngetPM(update): scoop update\ngetPM(uninstall): scoop uninstall\ngetPM(search): scoop search\ntags(prefix) [ 'prFX:WINDOWS10', 'prFX:WINDOWS' ]\nsudo apt-get install -y mypackage\nReplaces apt install/update/uninstall to the right for distribution: scoop install mypackage\ngetShell() - your OS Shell true\npathWinToLinux(\"C:\\Users\\mapoart\\testok\"): /mnt/c/Users/mapoart/testok",
           "testBody": "node program.js shouldContain -> /^distrosList/",
           "ok": true
         }
@@ -147,6 +147,19 @@
         {
           "type": "equal",
           "params": [
+            "pkg install abc",
+            "pkg install abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "pkg install abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "pkg install abc equal -> pkg install abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
             "yum install -y abc",
             "yum install -y abc"
           ],
@@ -155,6 +168,19 @@
           "testType": "equal",
           "result": true,
           "testBody": "yum install -y abc equal -> yum install -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "emerge abc",
+            "emerge abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
+          "title": "emerge abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "emerge abc equal -> emerge abc",
           "ok": true
         },
         {
@@ -288,7 +314,7 @@
           "ok": true
         }
       ],
-      "totalOk": 17,
+      "totalOk": 19,
       "totalFailed": 0
     }
   ],
@@ -377,6 +403,19 @@
         {
           "type": "equal",
           "params": [
+            "pkg delete abc",
+            "pkg delete abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "pkg delete abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "pkg delete abc equal -> pkg delete abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
             "yum remove -y abc",
             "yum remove -y abc"
           ],
@@ -385,6 +424,19 @@
           "testType": "equal",
           "result": true,
           "testBody": "yum remove -y abc equal -> yum remove -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "emerge --deselect abc",
+            "emerge --deselect abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
+          "title": "emerge --deselect abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "emerge --deselect abc equal -> emerge --deselect abc",
           "ok": true
         },
         {
@@ -518,7 +570,7 @@
           "ok": true
         }
       ],
-      "totalOk": 17,
+      "totalOk": 19,
       "totalFailed": 0
     }
   ],
@@ -607,6 +659,19 @@
         {
           "type": "equal",
           "params": [
+            "pkg update abc",
+            "pkg update abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "pkg update abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "pkg update abc equal -> pkg update abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
             "yum update -y abc",
             "yum update -y abc"
           ],
@@ -615,6 +680,19 @@
           "testType": "equal",
           "result": true,
           "testBody": "yum update -y abc equal -> yum update -y abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "emerge --update --deep abc",
+            "emerge --update --deep abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
+          "title": "emerge --update --deep abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "emerge --update --deep abc equal -> emerge --update --deep abc",
           "ok": true
         },
         {
@@ -748,7 +826,7 @@
           "ok": true
         }
       ],
-      "totalOk": 17,
+      "totalOk": 19,
       "totalFailed": 0
     }
   ],

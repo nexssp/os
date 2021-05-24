@@ -1,31 +1,31 @@
-const { distros, get } = require('./distro');
-const { getPackageManager } = require('./pkgManagers.js');
-const { pathWinToLinux } = require('./winVsLinux');
-const name = () => get('NAME');
-const v = () => get('VERSION_ID');
-const isRoot = () => (process.getuid && process.getuid() === 0) || false;
-const sudo = () => (isRoot() ? '' : 'sudo ');
+const { distros, get } = require('./lib/distro')
+const { getPackageManager } = require('./lib/pkgManagers.js')
+const { pathWinToLinux } = require('./lib/winVsLinux')
+const name = () => get('NAME')
+const v = () => get('VERSION_ID')
+const isRoot = () => (process.getuid && process.getuid() === 0) || false
+const sudo = () => (isRoot() ? '' : 'sudo ')
 const getPM = (operation = 'install', dist, version) =>
-  getPackageManager(dist ? dist : name(), operation, version ? version : v());
+  getPackageManager(dist ? dist : name(), operation, version ? version : v())
 // Unique tags per distro and version
 // eg const ts = tags();
 // ['Alpine Linux3','Alpine Linux']
 function getKeyByValue(object, value) {
-  return Object.keys(object).find((key) => object[key] === value);
+  return Object.keys(object).find((key) => object[key] === value)
 }
 const tags = (prefix = '') => {
-  const nm = name();
-  const dv = v();
-  const k = getKeyByValue(distros, nm);
-  return [prefix + k + parseInt(dv), prefix + k];
-};
+  const nm = name()
+  const dv = v()
+  const k = getKeyByValue(distros, nm)
+  return [prefix + k + parseInt(dv), prefix + k]
+}
 const replacePMByDistro = (cmd, distro, version) => {
-  const replacerInstall = getPM('install', distro, version);
-  const replacerUpdate = getPM('update', distro, version);
-  const replacerUninstall = getPM('uninstall', distro, version);
+  const replacerInstall = getPM('install', distro, version)
+  const replacerUpdate = getPM('update', distro, version)
+  const replacerUninstall = getPM('uninstall', distro, version)
   if (!cmd.replace) {
-    console.error(`@nexssp/os: There was an error. command should be string, but received: `, cmd);
-    process.exitCode = 1;
+    console.error(`@nexssp/os: There was an error. command should be string, but received: `, cmd)
+    process.exitCode = 1
   } else {
     return cmd
       .replace(
@@ -48,29 +48,29 @@ const replacePMByDistro = (cmd, distro, version) => {
           'gs'
         ),
         replacerUninstall
-      );
+      )
   }
-};
+}
 
 const getShell = (distro) => {
   if (!distro) {
-    if (process.platform === 'darwin') return 'zsh';
-    if (process.platform === 'win32') return true;
-    distro = name();
+    if (process.platform === 'darwin') return 'zsh'
+    if (process.platform === 'win32') return true
+    distro = name()
   }
 
   switch (distro) {
     case distros.ALPINE:
     case distros.AMAZON_AMI:
-      return '/bin/sh';
+      return '/bin/sh'
     case distros.WINDOWS:
-      return true;
+      return true
     case distros.MACOS:
-      return '/bin/zsh';
+      return '/bin/zsh'
     default:
-      return '/bin/bash';
+      return '/bin/bash'
   }
-};
+}
 
 module.exports = {
   isRoot,
@@ -84,4 +84,4 @@ module.exports = {
   replacePMByDistro,
   getShell,
   pathWinToLinux,
-};
+}
