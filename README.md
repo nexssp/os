@@ -45,7 +45,8 @@ npm i @nexssp/os
 ## Usage
 
 ```js
-const os = require('@nexssp/os')
+// For legacy functions 1.x as this. See above for 2.x
+const os = require('@nexssp/os/legacy')
 console.log(os.name()) // shows distro name
 ```
 
@@ -96,7 +97,7 @@ module.exports.distros = {
 ## More Examples
 
 ```js
-const os = require('@nexssp/os')
+const os = require('@nexssp/os/legacy')
 
 // Distros
 console.log('distrosList', os.distros)
