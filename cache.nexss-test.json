@@ -39,7 +39,7 @@
           "title": "{\"NAME\":\"Windows\",\"VERSION_ID\":\"10.0.19042\"}",
           "testType": "equal",
           "result": true,
-          "testBody": "{\"NAME\":\"Windows\",\"VERSION_ID\":\"10.0.19042\"} equal -> /{\"NAME\":\".*\"/",
+          "testBody": "{\"NAME\":\"Windows\",\"VERSION_ID\":\"10.0.19042\"} equal -> /\"NAME\":\".*\"/",
           "ok": true
         },
         {

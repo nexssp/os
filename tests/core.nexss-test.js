@@ -21,7 +21,7 @@ module.exports = {
     ...currentOsSpecificTests,
     {
       type: 'equal',
-      params: [JSON.stringify(os.get()), /{"NAME":".*"/],
+      params: [JSON.stringify(os.get()), /"NAME":".*"/],
     },
     {
       params: ['node program.js', /^distrosList/, { chdir: __dirname }],

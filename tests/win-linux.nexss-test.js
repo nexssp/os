@@ -24,6 +24,10 @@ for (const [k, v] of Object.entries(testValuesNotToBe)) {
 }
 
 for (const [k, v] of Object.entries(testValuesToBe)) {
+  console.log({
+    type: 'equal',
+    params: [pathWinToLinux(k), v],
+  })
   generatedTests.push({
     type: 'equal',
     params: [pathWinToLinux(k), v],
