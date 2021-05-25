@@ -1,6 +1,12 @@
-const nexssOS = require('../lib/os')
+const osLegacy = require('../legacy')
 
-const nexssOS1 = nexssOS()
+console.log(osLegacy.getTags('Ubuntu', '20.10')) // [ 'UBUNTU', 'UBUNTU20', 'UBUNTU2010' ]
+console.log(osLegacy.getTags('Ubuntu', 20.1)) // [ 'UBUNTU', 'UBUNTU20', 'UBUNTU201' ]
+console.log(osLegacy.getTags()) // [ 'WINDOWS', 'WINDOWS10', 'WINDOWS100' ] current OS tags
+
+console.log(osLegacy.getTags('Ubuntu', '20.10').first()) // UBUNTU
+console.log(osLegacy.getTags('Ubuntu', 20.1).second()) // UBUNTU20
+console.log(osLegacy.getTags().third()) // WINDOWS100
 
 // const php = nexssOS1.where('php')
 
@@ -11,4 +17,4 @@ const nexssOS1 = nexssOS()
 // const checkPath = nexssOS1.checkPath('bash')
 // console.log('!!!', checkPathWSL)
 
-console.log('###', nexssOS1.get())
+// console.log('###', nexssOS1.get())

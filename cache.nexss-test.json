@@ -53,7 +53,7 @@
           "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/core.nexss-test.js",
           "title": "node program.js",
           "testType": "shouldContain",
-          "result": "distrosList {\n  ALPINE: 'Alpine Linux',\n  AMAZON: 'Amazon Linux',\n  AMAZON_AMI: 'Amazon Linux AMI',\n  ARCH: 'Arch Linux',\n  CENTOS: 'CentOS Linux',\n  DEBIAN: 'Debian GNU/Linux',\n  FREEBSD: 'FreeBSD',\n  FEDORA: 'Fedora',\n  GENTOO: 'Gentoo',\n  MINT: 'Linux Mint',\n  NIXOS: 'NixOS',\n  ORACLE: 'Oracle Linux Server',\n  RHEL: 'RHEL Linux',\n  SUSE_LEAP: 'openSUSE Leap',\n  SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',\n  UBUNTU: 'Ubuntu',\n  WINDOWS: 'Windows',\n  MACOS: 'MacOS'\n}\nisRoot:  false\nname:  Windows\nget(\"name\"):  Windows\nv:  10.0.19042\nget(\"VERSION_ID\"):  10.0.19042\nget(\"VERSION_IDxxx\"):  undefined\nget() { NAME: 'Windows', VERSION_ID: '10.0.19042' }\ngetShell() - your OS Shell true\ngetShell(ALPINE) /bin/sh\ngetShell(MACOS) /bin/zsh\ngetPM(install): scoop install\ngetPM(update): scoop update\ngetPM(uninstall): scoop uninstall\ngetPM(search): scoop search\ntags(prefix) [ 'prFX:WINDOWS', 'prFX:WINDOWS10', 'prFX:WINDOWS100' ]\nsudo apt-get install -y mypackage\nReplaces apt install/update/uninstall to the right for distribution: scoop install mypackage\ngetShell() - your OS Shell true\npathWinToLinux(\"C:\\Users\\mapoart\\testok\"): /mnt/c/Users/mapoart/testok",
+          "result": "distrosList {\n  ALPINE: 'Alpine Linux',\n  AMAZON: 'Amazon Linux',\n  AMAZON_AMI: 'Amazon Linux AMI',\n  ARCH: 'Arch Linux',\n  CENTOS: 'CentOS Linux',\n  DEBIAN: 'Debian GNU/Linux',\n  FREEBSD: 'FreeBSD',\n  FEDORA: 'Fedora',\n  GENTOO: 'Gentoo',\n  MINT: 'Linux Mint',\n  NIXOS: 'NixOS',\n  ORACLE: 'Oracle Linux Server',\n  RHEL: 'RHEL Linux',\n  SUSE_LEAP: 'openSUSE Leap',\n  SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',\n  UBUNTU: 'Ubuntu',\n  WINDOWS: 'Windows',\n  MACOS: 'MacOS'\n}\nisRoot:  false\nname:  Windows\nget(\"name\"):  Windows\nv:  10.0.19042\nget(\"VERSION_ID\"):  10.0.19042\nget(\"VERSION_IDxxx\"):  undefined\nget() { NAME: 'Windows', VERSION_ID: '10.0.19042' }\ngetShell() - your OS Shell true\ngetShell(ALPINE) /bin/sh\ngetShell(MACOS) /bin/zsh\ngetPM(install): scoop install\ngetPM(update): scoop update\ngetPM(uninstall): scoop uninstall\ngetPM(search): scoop search\ntags(prefix) [ 'prFX:WINDOWS', 'prFX:WINDOWS10', 'prFX:WINDOWS100' ]\n[ 'UBUNTU', 'UBUNTU20', 'UBUNTU2010' ]\n[ 'UBUNTU', 'UBUNTU20', 'UBUNTU201' ]\n[ 'WINDOWS', 'WINDOWS10', 'WINDOWS100' ]\nUBUNTU\nUBUNTU20\nWINDOWS100\nsudo apt-get install -y mypackage\nReplaces apt install/update/uninstall to the right for distribution: scoop install mypackage\ngetShell() - your OS Shell true\npathWinToLinux(\"C:\\Users\\mapoart\\testok\"): /mnt/c/Users/mapoart/testok",
           "testBody": "node program.js shouldContain -> /^distrosList/",
           "ok": true
         }
@@ -1188,6 +1188,12 @@
   ],
   {
     "file": "tests/assert-tests/functions.nexss-assert.js",
+    "results": "ok",
+    "totalOk": 1,
+    "totalFailed": 0
+  },
+  {
+    "file": "tests/assert-tests/tags.nexss-assert.js",
     "results": "ok",
     "totalOk": 1,
     "totalFailed": 0

@@ -69,7 +69,23 @@ Detect `Linux` _distro name_ and version, check if user is root, and some other 
 Recognize different distros and Windows versions by tags.
 Example:
 
+### New Tags
+
 ```js
+// With no parameters it shows tags for the current os
+console.log(nexssOS1.getTags('Ubuntu', '20.10')) // [ 'UBUNTU', 'UBUNTU20', 'UBUNTU2010' ]
+console.log(nexssOS1.getTags('Ubuntu', 20.1)) // [ 'UBUNTU', 'UBUNTU20', 'UBUNTU201' ]
+console.log(nexssOS1.getTags()) // [ 'WINDOWS', 'WINDOWS10', 'WINDOWS100' ] current OS tags
+
+console.log(nexssOS1.getTags('Ubuntu', '20.10').first()) // UBUNTU
+console.log(nexssOS1.getTags('Ubuntu', 20.1).second()) // UBUNTU20
+console.log(nexssOS1.getTags().third()) // WINDOWS100
+```
+
+### Legacy Tags
+
+```js
+// LEGACY Tags - still works!
 // For Ubuntu 18
 console.log('tags(prefix)', os.tags('prFX:')) // [ 'prFX:UBUNTU18', 'prFX:UBUNTU' ]
 

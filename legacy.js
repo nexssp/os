@@ -13,6 +13,7 @@ const getPM = (operation = 'install', dist, version) =>
 function getKeyByValue(object, value) {
   return Object.keys(object).find((key) => object[key] === value)
 }
+
 const tags = (prefix = '') => {
   const nm = name()
   const dv = v()
@@ -23,6 +24,42 @@ const tags = (prefix = '') => {
     prefix + k + parseInt(dv.replace('.', '').replace(',', '')),
   ]
 }
+
+const getTags = (distroName, version, prefix = '') => {
+  if (!version && distroName) {
+    throw new Error(`You need to pass both 'name' and 'version' or none.`)
+  }
+
+  if (!distroName) {
+    distroName = name()
+    version = v() //convert to number
+  }
+
+  version += ''
+
+  const k = getKeyByValue(distros, distroName)
+  const result = [
+    prefix + k,
+    prefix + k + parseInt(version),
+    prefix + k + parseInt(version.replace('.', '').replace(',', '')),
+  ]
+
+  const prop = (no) => ({
+    enumerable: false,
+    value: function () {
+      return this[no]
+    },
+  })
+
+  Object.defineProperties(result, {
+    first: prop(0),
+    second: prop(1),
+    third: prop(2),
+  })
+
+  return result
+}
+
 const replacePMByDistro = (cmd, distro, version) => {
   const replacerInstall = getPM('install', distro, version)
   const replacerUpdate = getPM('update', distro, version)
@@ -94,6 +131,7 @@ module.exports = {
   get,
   getPM,
   tags,
+  getTags,
   replacePMByDistro,
   getShell,
   pathWinToLinux,

@@ -36,7 +36,20 @@ console.log('getPM(install):', os.getPM()) // Displays install command
 console.log('getPM(update):', os.getPM('update')) // Displays update command
 console.log('getPM(uninstall):', os.getPM('uninstall')) // Displays update command
 console.log('getPM(search):', os.getPM('search')) // Displays update command
+// Legacy tags
 console.log('tags(prefix)', os.tags('prFX:')) // [ 'prFX:WINDOWS10', 'prFX:WINDOWS' ]
+
+// New tags
+
+// With no parameters it shows tags for the current os
+console.log(os.getTags('Ubuntu', '20.10')) // [ 'UBUNTU', 'UBUNTU20', 'UBUNTU2010' ]
+console.log(os.getTags('Ubuntu', 20.1)) // [ 'UBUNTU', 'UBUNTU20', 'UBUNTU201' ]
+console.log(os.getTags()) // [ 'WINDOWS', 'WINDOWS10', 'WINDOWS100' ] current OS tags
+
+console.log(os.getTags('Ubuntu', '20.10').first()) // UBUNTU
+console.log(os.getTags('Ubuntu', 20.1).second()) // UBUNTU20
+console.log(os.getTags().third()) // WINDOWS100
+
 // Sudo - shows when there is no admin, handy to write automations on eg. docker containers
 console.log(`${os.sudo()}apt-get install -y mypackage`)
 console.log(
