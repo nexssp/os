@@ -10,7 +10,13 @@ Now we are created new version with new oses.
 - **NEW:** terminal functions eg.
 
 ```sh
-nexssp-os get # displays information about system
+nexssp-os get # displays information about any system (etc/os-release)
+```
+
+![Free bsd /etc/os-release](https://user-images.githubusercontent.com/53263666/119468786-10f8ca80-bd47-11eb-8c10-ea71971a3cf2.png)
+
+```sh
+
 nexssp-os install nodejs --dry # displays install command for your os
 nexssp-os uninstall nodejs --json # uninstalls and shows result as json data
 nexssp-os search nodejs
