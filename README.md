@@ -10,6 +10,7 @@ Now we are created new version with new oses.
 - **NEW:** terminal functions eg.
 
 ```sh
+nexssp-os get # displays information about system
 nexssp-os install nodejs --dry # displays install command for your os
 nexssp-os uninstall nodejs --json # uninstalls and shows result as json data
 nexssp-os search nodejs
