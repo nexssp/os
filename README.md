@@ -25,6 +25,7 @@ const nexssOS = require('@nexssp/os')
 const nexssOS1 = nexssOS()
 
 // in terminal nexssp-os install nodejs
+// 2.0.7+ you can also pass string like .install('nodejs')
 const result1 = nexssOS1.install(['nodejs'], { dry: true }) // dry will return  the install command for the OS the command is run
 //eg for Ubuntu it will be apt-get update, for gentoo emerge, ...etc. Without dry it will execute the command displayed with dry.
 const result2 = nexssOS1.uninstall(['nodejs'], { json: true }) // uninstall package - json will return json data

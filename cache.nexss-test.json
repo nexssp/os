@@ -929,5 +929,11 @@
       "totalOk": 7,
       "totalFailed": 0
     }
-  ]
+  ],
+  {
+    "file": "tests/assert-tests/functions.nexss-assert.js",
+    "results": "ok",
+    "totalOk": 1,
+    "totalFailed": 0
+  }
 ]
