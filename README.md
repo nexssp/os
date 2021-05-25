@@ -10,6 +10,12 @@ Now we are created new version with new oses.
 - **NEW:** terminal functions eg.
 
 ```sh
+nexssp-os env
+```
+
+![image](https://user-images.githubusercontent.com/53263666/119475561-8e273e00-bd4d-11eb-9b71-cdfaa62ed84e.png)
+
+```sh
 nexssp-os get # displays information about any system (etc/os-release)
 ```
 
