@@ -53,7 +53,7 @@
           "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/core.nexss-test.js",
           "title": "node program.js",
           "testType": "shouldContain",
-          "result": "distrosList {\n  ALPINE: 'Alpine Linux',\n  AMAZON: 'Amazon Linux',\n  AMAZON_AMI: 'Amazon Linux AMI',\n  ARCH: 'Arch Linux',\n  CENTOS: 'CentOS Linux',\n  DEBIAN: 'Debian GNU/Linux',\n  FREEBSD: 'FreeBSD',\n  FEDORA: 'Fedora',\n  GENTOO: 'Gentoo',\n  MINT: 'Linux Mint',\n  NIXOS: 'NixOS',\n  ORACLE: 'Oracle Linux Server',\n  RHEL: 'RHEL Linux',\n  SUSE_LEAP: 'openSUSE Leap',\n  SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',\n  UBUNTU: 'Ubuntu',\n  WINDOWS: 'Windows',\n  MACOS: 'MacOS'\n}\nisRoot:  false\nname:  Windows\nget(\"name\"):  Windows\nv:  10.0.19042\nget(\"VERSION_ID\"):  10.0.19042\nget(\"VERSION_IDxxx\"):  undefined\nget() { NAME: 'Windows', VERSION_ID: '10.0.19042' }\ngetShell() - your OS Shell true\ngetShell(ALPINE) /bin/sh\ngetShell(MACOS) /bin/zsh\ngetPM(install): scoop install\ngetPM(update): scoop update\ngetPM(uninstall): scoop uninstall\ngetPM(search): scoop search\ntags(prefix) [ 'prFX:WINDOWS10', 'prFX:WINDOWS' ]\nsudo apt-get install -y mypackage\nReplaces apt install/update/uninstall to the right for distribution: scoop install mypackage\ngetShell() - your OS Shell true\npathWinToLinux(\"C:\\Users\\mapoart\\testok\"): /mnt/c/Users/mapoart/testok",
+          "result": "distrosList {\n  ALPINE: 'Alpine Linux',\n  AMAZON: 'Amazon Linux',\n  AMAZON_AMI: 'Amazon Linux AMI',\n  ARCH: 'Arch Linux',\n  CENTOS: 'CentOS Linux',\n  DEBIAN: 'Debian GNU/Linux',\n  FREEBSD: 'FreeBSD',\n  FEDORA: 'Fedora',\n  GENTOO: 'Gentoo',\n  MINT: 'Linux Mint',\n  NIXOS: 'NixOS',\n  ORACLE: 'Oracle Linux Server',\n  RHEL: 'RHEL Linux',\n  SUSE_LEAP: 'openSUSE Leap',\n  SUSE_TUMBLEWEED: 'openSUSE Tumbleweed',\n  UBUNTU: 'Ubuntu',\n  WINDOWS: 'Windows',\n  MACOS: 'MacOS'\n}\nisRoot:  false\nname:  Windows\nget(\"name\"):  Windows\nv:  10.0.19042\nget(\"VERSION_ID\"):  10.0.19042\nget(\"VERSION_IDxxx\"):  undefined\nget() { NAME: 'Windows', VERSION_ID: '10.0.19042' }\ngetShell() - your OS Shell true\ngetShell(ALPINE) /bin/sh\ngetShell(MACOS) /bin/zsh\ngetPM(install): scoop install\ngetPM(update): scoop update\ngetPM(uninstall): scoop uninstall\ngetPM(search): scoop search\ntags(prefix) [ 'prFX:WINDOWS', 'prFX:WINDOWS10', 'prFX:WINDOWS100' ]\nsudo apt-get install -y mypackage\nReplaces apt install/update/uninstall to the right for distribution: scoop install mypackage\ngetShell() - your OS Shell true\npathWinToLinux(\"C:\\Users\\mapoart\\testok\"): /mnt/c/Users/mapoart/testok",
           "testBody": "node program.js shouldContain -> /^distrosList/",
           "ok": true
         }
@@ -311,6 +311,262 @@
           "testType": "equal",
           "result": true,
           "testBody": "apt-get install -y abc equal -> apt-get install -y abc",
+          "ok": true
+        }
+      ],
+      "totalOk": 19,
+      "totalFailed": 0
+    }
+  ],
+  [
+    {
+      "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+      "results": [
+        {
+          "type": "equal",
+          "params": [
+            "apk search abc",
+            "apk search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "apk search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apk search abc equal -> apk search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum search abc",
+            "yum search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "yum search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum search abc equal -> yum search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum search abc",
+            "yum search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "yum search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum search abc equal -> yum search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "pacman -Ss abc",
+            "pacman -Ss abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "pacman -Ss abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "pacman -Ss abc equal -> pacman -Ss abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum search abc",
+            "yum search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "yum search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum search abc equal -> yum search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-cache search abc",
+            "apt-cache search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "apt-cache search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-cache search abc equal -> apt-cache search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "pkg search abc",
+            "pkg search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "pkg search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "pkg search abc equal -> pkg search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum search abc",
+            "yum search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "yum search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum search abc equal -> yum search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "emerge --search abc",
+            "emerge --search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "emerge --search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "emerge --search abc equal -> emerge --search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-cache search abc",
+            "apt-cache search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "apt-cache search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-cache search abc equal -> apt-cache search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "nix search abc",
+            "nix search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "nix search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "nix search abc equal -> nix search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum search abc",
+            "yum search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "yum search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum search abc equal -> yum search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "yum search abc",
+            "yum search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "yum search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "yum search abc equal -> yum search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "zypper search abc",
+            "zypper search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "zypper search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "zypper search abc equal -> zypper search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "zypper search abc",
+            "zypper search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "zypper search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "zypper search abc equal -> zypper search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-cache search abc",
+            "apt-cache search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "apt-cache search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-cache search abc equal -> apt-cache search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "scoop search abc",
+            "scoop search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "scoop search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "scoop search abc equal -> scoop search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-cache search abc",
+            "apt-cache search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "apt-cache search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-cache search abc equal -> apt-cache search abc",
+          "ok": true
+        },
+        {
+          "type": "equal",
+          "params": [
+            "apt-cache search abc",
+            "apt-cache search abc"
+          ],
+          "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
+          "title": "apt-cache search abc",
+          "testType": "equal",
+          "result": true,
+          "testBody": "apt-cache search abc equal -> apt-cache search abc",
           "ok": true
         }
       ],

@@ -17,12 +17,17 @@ const tags = (prefix = '') => {
   const nm = name()
   const dv = v()
   const k = getKeyByValue(distros, nm)
-  return [prefix + k + parseInt(dv), prefix + k]
+  return [
+    prefix + k,
+    prefix + k + parseInt(dv),
+    prefix + k + parseInt(dv.replace('.', '').replace(',', '')),
+  ]
 }
 const replacePMByDistro = (cmd, distro, version) => {
   const replacerInstall = getPM('install', distro, version)
   const replacerUpdate = getPM('update', distro, version)
   const replacerUninstall = getPM('uninstall', distro, version)
+  const replacerSearch = getPM('search', distro, version)
   if (!cmd.replace) {
     console.error(`@nexssp/os: There was an error. command should be string, but received: `, cmd)
     process.exitCode = 1
@@ -48,6 +53,13 @@ const replacePMByDistro = (cmd, distro, version) => {
           'gs'
         ),
         replacerUninstall
+      )
+      .replace(
+        new RegExp(
+          '(?:sudo?:(.*))?(apt -y search|apt-get -y search|apt-get search -y|apt search -y|apt search|apt-get search)',
+          'gs'
+        ),
+        replacerSearch
       )
   }
 }
