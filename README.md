@@ -4,8 +4,6 @@
 
 **NOTE: 1.x USERS: Also 1.x Users can still move to this version but they will need to change the way to load @nexssp/os plugin from `require("@nexssp/os")` to `require("@nexssp/os/legacy")`**
 
-Now we are created new version with new oses.
-
 - **NEW:** **FreeBSD** and **Gentoo** supported.
 - **NEW:** terminal functions eg.
 
