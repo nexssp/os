@@ -18,3 +18,7 @@ console.log(osLegacy.getTags().third()) // WINDOWS100
 // console.log('!!!', checkPathWSL)
 
 // console.log('###', nexssOS1.get())
+const nexssOS = require('../')
+const nexssOS1 = nexssOS()
+const checkPathWSL = nexssOS1.checkPath('wsl')
+console.log(checkPathWSL)
