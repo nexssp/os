@@ -4,7 +4,7 @@
   "bin": {
     "nexssp-os": "bin/nexssp-os.js"
   },
-  "version": "2.0.18",
+  "version": "2.0.19",
   "description": "Get linux distro name, distro version, package managers, check isRoot, convert paths.. + now install things easy for all OSes!",
   "keywords": [
     "os",
