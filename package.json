@@ -5,8 +5,8 @@
     "nexssp-os": "bin/nexssp-os.js"
   },
   "files": [
-    "index.js",
-    "index.mjs",
+    "lib/index.js",
+    "lib/index.mjs",
     "legacy.js",
     "lib/**/*",
     "bin/*"
@@ -14,8 +14,8 @@
   "exports": {
     ".": {
       "node": {
-        "import": "./index.mjs",
-        "require": "./index.js"
+        "import": "./lib/index.mjs",
+        "require": "./lib/index.js"
       }
     },
     "./legacy": "./legacy.js"
