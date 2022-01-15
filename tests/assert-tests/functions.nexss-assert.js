@@ -1,4 +1,4 @@
-const os = require('../../index')
+const os = require('../../lib/index')
 const os1 = new os()
 
 // Just checking if functions works
