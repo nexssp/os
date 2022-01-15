@@ -54,9 +54,9 @@ function nexssOS({ cache, progress, cacheDuration } = {}) {
     replacePMByDistro,
     getShell,
     pathWinToLinux,
-  } = require('../legacy')
+  } = require('./legacy.js')
 
-  const { cmd } = require('./cmd')
+  const { cmd } = require('./lib/cmd.js')
 
   function checkPath(pkg) {
     if (!pkg) {

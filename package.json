@@ -1,10 +1,25 @@
 {
   "name": "@nexssp/os",
-  "main": "lib/os.js",
+  "version": "2.0.19",
   "bin": {
     "nexssp-os": "bin/nexssp-os.js"
   },
-  "version": "2.0.19",
+  "files": [
+    "index.js",
+    "index.mjs",
+    "legacy.js",
+    "lib/**/*",
+    "bin/*"
+  ],
+  "exports": {
+    ".": {
+      "node": {
+        "import": "./index.mjs",
+        "require": "./index.js"
+      }
+    },
+    "./legacy": "./legacy.js"
+  },
   "description": "Get linux distro name, distro version, package managers, check isRoot, convert paths.. + now install things easy for all OSes!",
   "keywords": [
     "os",
@@ -15,7 +30,7 @@
     "windows",
     "nexss"
   ],
-  "author": "mapoart@gmail.com",
+  "author": "Marcin Polak <mapoart@gmail.com>",
   "homepage": "https://nexss.com",
   "repository": {
     "type": "git",
@@ -27,7 +42,7 @@
   },
   "scripts": {
     "dev": "nexssp-os install",
-    "test": "nexssp-test --debug",
+    "test": "npx @nexssp/test --debug",
     "prepare2": "npm run build",
     "build": "npx nexssp/min"
   },
@@ -43,13 +58,10 @@
     }
   ],
   "dependencies": {
-    "@nexssp/ansi": "^1.1.2",
-    "@nexssp/extend": "^2.0.1",
-    "@nexssp/logdebug": "^1.0.16",
-    "@nexssp/plugin": "^1.0.4",
-    "@nexssp/system": "^1.1.4"
-  },
-  "devDependencies": {
-    "@nexssp/test": "^1.1.0"
+    "@nexssp/ansi": "^1.1.5",
+    "@nexssp/extend": "^2.0.9",
+    "@nexssp/logdebug": "^1.0.20",
+    "@nexssp/plugin": "^1.0.7",
+    "@nexssp/system": "^1.1.9"
   }
 }

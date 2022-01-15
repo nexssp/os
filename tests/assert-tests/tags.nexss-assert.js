@@ -1,4 +1,4 @@
-const os = require('../../lib/os')
+const os = require('../../')
 const os1 = new os()
 const assert = require('assert')
 // Just checking if functions works

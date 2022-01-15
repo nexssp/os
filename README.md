@@ -1,5 +1,7 @@
 # @nexssp/os
 
+**15.01.2022 Upgrade** - Now works also with `import` as module.
+
 ## New version 2.x
 
 **NOTE: 1.x USERS: Also 1.x Users can still move to this version but they will need to change the way to load @nexssp/os plugin from `require("@nexssp/os")` to `require("@nexssp/os/legacy")`**
