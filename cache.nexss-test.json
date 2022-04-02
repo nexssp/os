@@ -290,14 +290,14 @@
         {
           "type": "equal",
           "params": [
-            "apt-get install -y abc",
-            "apt-get install -y abc"
+            "brew install abc",
+            "brew install abc"
           ],
           "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-install.nexss-test.js",
-          "title": "apt-get install -y abc",
+          "title": "brew install abc",
           "testType": "equal",
           "result": true,
-          "testBody": "apt-get install -y abc equal -> apt-get install -y abc",
+          "testBody": "brew install abc equal -> brew install abc",
           "ok": true
         },
         {
@@ -546,14 +546,14 @@
         {
           "type": "equal",
           "params": [
-            "apt-cache search abc",
-            "apt-cache search abc"
+            "brew search abc",
+            "brew search abc"
           ],
           "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-search.nexss-test.js",
-          "title": "apt-cache search abc",
+          "title": "brew search abc",
           "testType": "equal",
           "result": true,
-          "testBody": "apt-cache search abc equal -> apt-cache search abc",
+          "testBody": "brew search abc equal -> brew search abc",
           "ok": true
         },
         {
@@ -802,14 +802,14 @@
         {
           "type": "equal",
           "params": [
-            "apt-get remove -y abc",
-            "apt-get remove -y abc"
+            "brew uninstall abc",
+            "brew uninstall abc"
           ],
           "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-uninstall.nexss-test.js",
-          "title": "apt-get remove -y abc",
+          "title": "brew uninstall abc",
           "testType": "equal",
           "result": true,
-          "testBody": "apt-get remove -y abc equal -> apt-get remove -y abc",
+          "testBody": "brew uninstall abc equal -> brew uninstall abc",
           "ok": true
         },
         {
@@ -1058,14 +1058,14 @@
         {
           "type": "equal",
           "params": [
-            "apt-get update -y abc",
-            "apt-get update -y abc"
+            "brew install abc",
+            "brew install abc"
           ],
           "file": "C:\\Users\\mapoart\\.nexss\\Future\\mypackages\\os/tests/replacements-update.nexss-test.js",
-          "title": "apt-get update -y abc",
+          "title": "brew install abc",
           "testType": "equal",
           "result": true,
-          "testBody": "apt-get update -y abc equal -> apt-get update -y abc",
+          "testBody": "brew install abc equal -> brew install abc",
           "ok": true
         },
         {

@@ -89,6 +89,12 @@ Object.values(distros).forEach((el) => {
           params: [exp, 'emerge --update --deep abc'],
         })
         break
+      case distros.MACOS:
+        dostrosTests.push({
+          type: 'equal',
+          params: [exp, 'brew install abc'] /** Yes install not update */,
+        })
+        break
       case distros.UBUNTU:
       default:
         dostrosTests.push({

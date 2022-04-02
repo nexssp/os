@@ -91,6 +91,12 @@ Object.values(distros).forEach((el) => {
           params: [exp, 'emerge --deselect abc'],
         })
         break
+      case distros.MACOS:
+        dostrosTests.push({
+          type: 'equal',
+          params: [exp, 'brew uninstall abc'],
+        })
+        break
       case distros.UBUNTU:
       default:
         dostrosTests.push({

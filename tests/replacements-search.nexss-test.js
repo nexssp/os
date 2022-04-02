@@ -96,6 +96,12 @@ Object.values(distros).forEach((el) => {
           params: [exp, 'emerge --search abc'],
         })
         break
+      case distros.MACOS:
+        dostrosTests.push({
+          type: 'equal',
+          params: [exp, 'brew search abc'],
+        })
+        break
       case distros.UBUNTU:
       default:
         dostrosTests.push({
