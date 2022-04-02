@@ -5,10 +5,12 @@ const os1 = new os()
 
 // Check path works also on WSL when wsl is passed
 // console.log(os1.checkPath('wsl bash')) // commented in case wsl is not installed
-console.log(os1.checkPath('wsl bash'))
 // While where will check where the wsl is..
 if (process.platform !== 'darwin') {
-  console.log(os1.where('cmd'))
+  if (process.platform === 'win32') {
+    console.log('Where cmd: ', os1.where('cmd'))
+    console.log('wsl bash: ', os1.checkPath('wsl bash'))
+  }
 } else {
   console.log('macOS brew: ', os1.where('brew'))
 }
