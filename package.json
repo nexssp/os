@@ -42,9 +42,8 @@
   },
   "scripts": {
     "dev": "nexssp-os install",
-    "test": "npx @nexssp/test --debug",
-    "prepare2": "npm run build",
-    "build": "npx nexssp/min"
+    "test": "nexssp-test --debug",
+    "prepare2": "npm run build"
   },
   "license": "MIT",
   "funding": [
@@ -61,7 +60,10 @@
     "@nexssp/ansi": "^1.1.5",
     "@nexssp/extend": "^2.0.9",
     "@nexssp/logdebug": "^1.0.20",
-    "@nexssp/plugin": "^1.0.7",
+    "@nexssp/plugin": "^1.0.9",
     "@nexssp/system": "^1.1.9"
+  },
+  "devDependencies": {
+    "@nexssp/test": "^1.1.15"
   }
 }
