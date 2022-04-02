@@ -26,8 +26,8 @@ console.log(os1.uninstall('nodejs', { dry: true }))
 console.log(os1.update('nodejs', { dry: true }))
 console.log(os1.distros)
 
-console.log('root: ', os1.isRoot())
-console.log(os1.sudo())
+console.log('isRoot(): ', os1.isRoot())
+console.log('sudo():', os1.sudo())
 console.log(os1.name())
 console.log('v:', os1.v())
 
