@@ -38,5 +38,5 @@ jobs:
       - run: yarn test
         shell: pwsh
         if: ${{ env.ACT || runner.os == 'Windows'}}
-      - run: sudo node test_macos.js
+      - run: sudo yarn test
         if: ${{ !env.ACT && runner.os != 'Windows' }}
