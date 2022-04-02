@@ -1,6 +1,9 @@
 const os = require('../../lib/index')
 const os1 = new os()
-
+const { execSync } = require('child_process')
+const nexssOSBinPath = require('path').resolve(__dirname, '../../bin/nexssp-os.js')
+const releaseData = execSync(`node ${nexssOSBinPath} env`).toString().trim()
+console.log(releaseData)
 // Just checking if functions works
 
 // Check path works also on WSL when wsl is passed
