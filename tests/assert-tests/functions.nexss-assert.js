@@ -7,7 +7,14 @@ const os1 = new os()
 // console.log(os1.checkPath('wsl bash')) // commented in case wsl is not installed
 console.log(os1.checkPath('wsl bash'))
 // While where will check where the wsl is..
-console.log(os1.where('cmd'))
+if (process.platform !== 'darwin') {
+  console.log(os1.where('cmd'))
+} else {
+  console.log('macOS brew: ', os1.where('brew'))
+}
+
+console.log('Current OS: ', os1.name(), os1.v())
+
 console.log(os1.install('nodejs', { dry: true }))
 console.log(os1.search('nodejs', { dry: true }))
 console.log(os1.uninstall('nodejs', { dry: true }))
