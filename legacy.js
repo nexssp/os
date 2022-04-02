@@ -3,7 +3,18 @@ const { getPackageManager } = require('./lib/pkgManagers.js')
 const { pathWinToLinux } = require('./lib/winVsLinux')
 const name = () => get('NAME')
 const v = () => get('VERSION_ID')
-const isRoot = () => (process.getuid && process.getuid() === 0) || false
+const isRoot = () => {
+  if (process.platform !== 'win32') {
+    return (process.getuid && process.getuid() === 0) || false
+  } else {
+    try {
+      require('child_process').execFileSync('net', ['session'], { stdio: 'ignore' })
+      return true
+    } catch (e) {
+      return false
+    }
+  }
+}
 const sudo = () => (isRoot() ? '' : 'sudo ')
 const getPM = (operation = 'install', dist, version) =>
   getPackageManager(dist ? dist : name(), operation, version ? version : v())

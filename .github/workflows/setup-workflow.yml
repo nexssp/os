@@ -8,7 +8,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [macos-latest]
         node-version: [16.x]
     runs-on: ${{ matrix.os }}
     steps:

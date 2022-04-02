@@ -15,16 +15,6 @@ console.log(os1.update('nodejs', { dry: true }))
 console.log(os1.distros)
 
 console.log('root: ', os1.isRoot())
-let isRoot
-try {
-  require('child_process').execFileSync('net', ['session'], { stdio: 'ignore' })
-
-  isRoot = true
-} catch (e) {
-  isRoot = false
-}
-
-console.log('process.getuid: ', isRoot)
 console.log(os1.sudo())
 console.log(os1.name())
 console.log('v:', os1.v())
