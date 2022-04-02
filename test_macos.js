@@ -14,7 +14,7 @@ const splitted = releaseData.split(/\r?\n/)
 const parsed = splitted
   .map((e) => {
     var s = e.split(':')
-    return { key: [s[0]], value: s[1] }
+    return { key: [s[0]], value: s[1].trim && s[1].trim() }
   })
   .reduce(
     (acc, e) => ({
