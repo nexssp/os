@@ -29,10 +29,14 @@ const tags = (prefix = '') => {
   const nm = name()
   const dv = v()
   const k = getKeyByValue(distros, nm)
+
+  const tag2Number = parseInt(dv)
+  const tag3Number = parseInt(dv.replace('.', '').replace(',', ''))
+
   return [
     prefix + k,
-    prefix + k + parseInt(dv),
-    prefix + k + parseInt(dv.replace('.', '').replace(',', '')),
+    prefix + k + tag2Number,
+    prefix + k + (tag2Number !== tag3Number ? tag3Number : dv.replace('.', '').replace(',', '')),
   ]
 }
 
