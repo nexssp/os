@@ -96,6 +96,7 @@ Object.values(distros).forEach((el) => {
           params: [exp, 'emerge abc'],
         })
         break
+      case distros.MACOSX:
       case distros.MACOS:
         dostrosTests.push({
           type: 'equal',

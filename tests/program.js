@@ -31,6 +31,7 @@ console.log('get()', os.get()) // display all available data - different for eac
 console.log('getShell() - your OS Shell', os.getShell()) // display current OS
 console.log('getShell(ALPINE)', os.getShell(os.distros.ALPINE)) // defined OS Shell
 console.log('getShell(MACOS)', os.getShell(os.distros.MACOS)) // defined OS Shell
+console.log('getShell(MACOSX)', os.getShell(os.distros.MACOSX)) // defined OSX Shell
 // Package managers
 console.log('getPM(install):', os.getPM()) // Displays install command
 console.log('getPM(update):', os.getPM('update')) // Displays update command

@@ -92,6 +92,7 @@ Object.values(distros).forEach((el) => {
         })
         break
       case distros.MACOS:
+      case distros.MACOSX:
         dostrosTests.push({
           type: 'equal',
           params: [exp, 'brew uninstall abc'],
