@@ -27,6 +27,7 @@
     "distribution",
     "version",
     "linux",
+    "macos",
     "windows",
     "nexss"
   ],
