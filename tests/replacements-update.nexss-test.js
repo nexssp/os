@@ -96,6 +96,7 @@ Object.values(distros).forEach((el) => {
           params: [exp, 'brew install abc'] /** Yes install not update */,
         })
         break
+      case distros.KALI:
       case distros.UBUNTU:
       default:
         dostrosTests.push({

@@ -103,6 +103,7 @@ Object.values(distros).forEach((el) => {
           params: [exp, 'brew search abc'],
         })
         break
+      case distros.KALI:
       case distros.UBUNTU:
       default:
         dostrosTests.push({

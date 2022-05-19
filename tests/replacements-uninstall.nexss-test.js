@@ -98,6 +98,7 @@ Object.values(distros).forEach((el) => {
           params: [exp, 'brew uninstall abc'],
         })
         break
+      case distros.KALI:
       case distros.UBUNTU:
       default:
         dostrosTests.push({
