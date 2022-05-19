@@ -1,5 +1,7 @@
 # @nexssp/os
 
+**19.05.2022** - Added support for **Kali Linux**.
+
 **02.04.2022** - Added github workflows and now works also with **MacOS**.
 
 **15.01.2022 Upgrade** - Now works also with `import` as module.
