@@ -1,5 +1,7 @@
 # @nexssp/os
 
+**20.03.2023** - FIXED: fails to return info on CentOS: fixed by: @DonJayamanne
+
 **19.05.2022** - Added support for **Kali Linux**.
 
 **02.04.2022** - Added github workflows and now works also with **MacOS**.
