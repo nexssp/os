@@ -1,6 +1,7 @@
 # @nexssp/os
 
-**20.03.2023** - FIXED: fails to return info on CentOS: fixed by: @DonJayamanne
+**05.05.2023** - FIX: /etc/os-release to determine linux distro - fix by: @qihangnet
+**20.03.2023** - FIX: fails to return info on CentOS: fix by: @DonJayamanne
 
 **19.05.2022** - Added support for **Kali Linux**.
 
