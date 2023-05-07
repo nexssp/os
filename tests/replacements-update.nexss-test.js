@@ -77,6 +77,7 @@ Object.values(distros).forEach((el) => {
           params: [exp, 'nix-channel --update abc'],
         })
         break
+      case distros.ANDROID:
       case distros.FREEBSD:
         dostrosTests.push({
           type: 'equal',

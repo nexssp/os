@@ -79,6 +79,7 @@ Object.values(distros).forEach((el) => {
           params: [exp, 'nix-store --delete abc'],
         })
         break
+      case distros.ANDROID:
       case distros.FREEBSD:
         dostrosTests.push({
           type: 'equal',
