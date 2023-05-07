@@ -26,6 +26,10 @@ function getKeyByValue(object, value) {
 }
 
 const tags = (prefix = '') => {
+  if (process.platform === 'android') {
+    // For now support for android platforms is limited.
+    return ["Android", "Android", "Android"]
+  }
   const nm = name()
   const dv = v()
   const k = getKeyByValue(distros, nm)
