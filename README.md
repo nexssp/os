@@ -1,5 +1,6 @@
 # @nexssp/os
 
+**07.05.2023** - FIX: Support for android platforms (experimental)
 **05.05.2023** - FIX: /etc/os-release to determine linux distro - fix by: @qihangnet
 **20.03.2023** - FIX: fails to return info on CentOS: fix by: @DonJayamanne
 
