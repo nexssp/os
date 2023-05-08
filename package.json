@@ -61,10 +61,10 @@
     "@nexssp/ansi": "^1.1.5",
     "@nexssp/extend": "^2.0.9",
     "@nexssp/logdebug": "^1.0.20",
-    "@nexssp/plugin": "^1.0.9",
+    "@nexssp/plugin": "^1.0.10",
     "@nexssp/system": "^1.1.10"
   },
   "devDependencies": {
-    "@nexssp/test": "^1.1.15"
+    "@nexssp/test": "^1.1.16"
   }
 }
