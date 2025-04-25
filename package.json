@@ -1,13 +1,15 @@
 {
   "name": "@nexssp/os",
-  "version": "2.0.36",
+  "version": "2.1.0",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
   "bin": {
     "nexssp-os": "bin/nexssp-os.js"
   },
   "files": [
-    "lib/index.js",
-    "lib/index.mjs",
     "legacy.js",
+    "legacy.d.ts",
     "lib/**/*",
     "bin/*"
   ],
@@ -16,9 +18,16 @@
       "node": {
         "import": "./lib/index.mjs",
         "require": "./lib/index.js"
-      }
+      },
+      "types": "./lib/index.d.ts"
     },
-    "./legacy": "./legacy.js"
+    "./legacy": {
+      "node": {
+        "import": "./legacy.mjs",
+        "require": "./legacy.js"
+      },
+      "types": "./legacy.d.ts"
+    }
   },
   "description": "Get linux distro name, distro version, package managers, check isRoot, convert paths.. + now install things easy for all OSes!",
   "keywords": [
@@ -29,6 +38,7 @@
     "linux",
     "macos",
     "windows",
+    "typescript",
     "nexss"
   ],
   "author": "Marcin Polak <mapoart@gmail.com>",
@@ -44,6 +54,7 @@
   "scripts": {
     "dev": "nexssp-os install",
     "test": "nexssp-test --debug",
+    "build:types": "tsc --emitDeclarationOnly --outDir .",
     "prepare2": "npm run build"
   },
   "license": "MIT",
@@ -58,11 +69,13 @@
     }
   ],
   "dependencies": {
-    "@nexssp/ansi": "^1.1.5",
+    "@nexssp/ansi": "^1.2.2",
     "@nexssp/extend": "^2.0.9",
-    "@nexssp/logdebug": "^1.0.20",
-    "@nexssp/plugin": "^1.0.10",
-    "@nexssp/system": "^1.1.10"
+    "@nexssp/logdebug": "^1.1.0",
+    "@nexssp/plugin": "^1.1.2",
+    "@nexssp/system": "^1.1.10",
+    "@types/node": "^22.15.2",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@nexssp/test": "^1.1.16"
