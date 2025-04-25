@@ -3,6 +3,7 @@ const { getPackageManager } = require('./lib/pkgManagers.js')
 const { pathWinToLinux } = require('./lib/winVsLinux')
 const name = () => get('NAME')
 const v = () => get('VERSION_ID')
+const id = () => get('ID');
 const isRoot = () => {
   if (process.platform !== 'win32') {
     return (process.getuid && process.getuid() === 0) || false
@@ -16,8 +17,12 @@ const isRoot = () => {
   }
 }
 const sudo = () => (isRoot() ? '' : 'sudo ')
-const getPM = (operation = 'install', dist, version) =>
-  getPackageManager(dist ? dist : name(), operation, version ? version : v())
+const getPM = (operation = 'install', dist, version) => {
+  const distName = dist ? dist : name();
+  // Special handling for Fedora to use ID
+  const distToUse = !dist && distName === distros.FEDORA ? id() : distName;
+  return getPackageManager(distToUse, operation, version ? version : v());
+}
 // Unique tags per distro and version
 // eg const ts = tags();
 // ['Alpine Linux3','Alpine Linux']
