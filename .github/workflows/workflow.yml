@@ -12,11 +12,12 @@ jobs:
         os:
           [
             windows-latest,
-            windows-2019,
+            windows-2022,
             ubuntu-latest,
-            ubuntu-18.04,
+            ubuntu-22.04,
             macos-latest,
-            macos-12,
+            macos-14,
+            macos-13,
           ]
         node-version: ["18.x", "20.x", "22.x", "23.x"]
     runs-on: ${{ matrix.os }}
